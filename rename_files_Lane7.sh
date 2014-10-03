@@ -40,9 +40,9 @@ mv rawsequences/Lane7.indexlength_6/Fastq/95-4_GGCTAC.R1.fastq.gz Au-95-4_Lane7_
 mv rawsequences/Lane7.indexlength_6/Fastq/95-4_GGCTAC.R2.fastq.gz Au-95-4_Lane7_R2.fastq.gz
 mv rawsequences/Lane7.indexlength_6/Fastq/95-5_AGTCAA.R1.fastq.gz Au-95-5_Lane7_R1.fastq.gz
 mv rawsequences/Lane7.indexlength_6/Fastq/95-5_AGTCAA.R2.fastq.gz Au-95-5_Lane7_R2.fastq.gz
-mv rawsequences/Lane7.indexlength_6/Fastq/95-6_AGTTCC.R1.fastq.gz Au-95-6_Lane7_R1.fastq
-mv rawsequences/Lane7.indexlength_6/Fastq/95-6_AGTTCC.R2.fastq.gz Au-95-6_Lane7_R2.fastq
-mv rawsequences/Lane7.indexlength_6/Fastq/95-7_ATGTCA.R1.fastq.gz Au-95-7_Lane7_R1.fastq
-mv rawsequences/Lane7.indexlength_6/Fastq/95-7_ATGTCA.R2.fastq.gz Au-95-7_Lane7_R2.fastq
-mv rawsequences/Lane7.indexlength_6/Fastq/95-8_CCGTCC.R1.fastq.gz Au-95-8_Lane7_R1.fastq
-mv rawsequences/Lane7.indexlength_6/Fastq/95-8_CCGTCC.R2.fastq.gz Au-95-8_Lane7_R2.fastq
+mv rawsequences/Lane7.indexlength_6/Fastq/95-6_AGTTCC.R1.fastq.gz Au-95-6_Lane7_R1.fastq.gz
+mv rawsequences/Lane7.indexlength_6/Fastq/95-6_AGTTCC.R2.fastq.gz Au-95-6_Lane7_R2.fastq.gz
+mv rawsequences/Lane7.indexlength_6/Fastq/95-7_ATGTCA.R1.fastq.gz Au-95-7_Lane7_R1.fastq.gz
+mv rawsequences/Lane7.indexlength_6/Fastq/95-7_ATGTCA.R2.fastq.gz Au-95-7_Lane7_R2.fastq.gz
+mv rawsequences/Lane7.indexlength_6/Fastq/95-8_CCGTCC.R1.fastq.gz Au-95-8_Lane7_R1.fastq.gz
+mv rawsequences/Lane7.indexlength_6/Fastq/95-8_CCGTCC.R2.fastq.gz Au-95-8_Lane7_R2.fastq.gz
