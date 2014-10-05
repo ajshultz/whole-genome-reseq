@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#SBATCH -p general
-#SBATCH -n 16
+#SBATCH -p serial_requeue
+#SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem 8000
 #SBATCH -t 3:00:00
@@ -21,7 +21,7 @@ READ1="../data/trimmed/${GENOME}_${RUN}_trimmed_1P.fastq.gz"
 READ2="../data/trimmed/${GENOME}_${RUN}_trimmed_2P.fastq.gz"
 OUTPUT="$GENOME.$RUN"
 
-bwa mem -t 16 -M -R '@RG\tID:'"$GENOME"'\tSM:'"$GENOME"'\tPL:Illumina_'"$RUN"'\tLB:'"$LIB"'\tPU:'"$LIB.$RUN" "${GENOMEDB}" $READ1 $READ2 | samtools view -b -T ${GENOMEDB}.fa - > ${OUTPUT}.bam
+bwa mem -t 1 -M -R '@RG\tID:'"$GENOME"'\tSM:'"$GENOME"'\tPL:Illumina_'"$RUN"'\tLB:'"$LIB"'\tPU:'"$LIB.$RUN" "${GENOMEDB}" $READ1 $READ2 | samtools view -b -T ${GENOMEDB}.fa - > ${OUTPUT}.bam
 scontrol update JobId=$SLURM_JOBID NumNodes=1
 ./slurm_job_${SLURM_JOBID}_resize.sh 
 java -Xmx2g -jar ~/sw/progs/picard-tools-1.121/SortSam.jar TMP_DIR=/scratch INPUT=${OUTPUT}.bam OUTPUT=${OUTPUT}.sorted.bam SORT_ORDER=coordinate
