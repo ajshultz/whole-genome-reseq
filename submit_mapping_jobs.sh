@@ -1,49 +1,50 @@
 #!/bin/bash
-sbatch run_bwa_mem.sh Au-01-1 320 Lane7
-sbatch run_bwa_mem.sh Au-01-2 320 Lane7
-sbatch run_bwa_mem.sh Au-01-3 320 Lane7
-sbatch run_bwa_mem.sh Au-01-4 320 Lane7
-sbatch run_bwa_mem.sh Au-01-5 320 Lane7
-sbatch run_bwa_mem.sh Au-01-6 320 Lane7
-sbatch run_bwa_mem.sh Au-01-7 320 Lane7
-sbatch run_bwa_mem.sh Au-01-8 320 Lane7
-sbatch run_bwa_mem.sh Au-01-1 320 Lane8
-sbatch run_bwa_mem.sh Au-01-2 320 Lane8
-sbatch run_bwa_mem.sh Au-01-3 320 Lane8
-sbatch run_bwa_mem.sh Au-01-4 320 Lane8
-sbatch run_bwa_mem.sh Au-01-5 320 Lane8
-sbatch run_bwa_mem.sh Au-01-6 320 Lane8
-sbatch run_bwa_mem.sh Au-01-7 320 Lane8
-sbatch run_bwa_mem.sh Au-01-8 320 Lane8
-sbatch run_bwa_mem.sh Au-14-1 320 Lane7
-sbatch run_bwa_mem.sh Au-14-2 320 Lane7
-sbatch run_bwa_mem.sh Au-14-3 320 Lane7
-sbatch run_bwa_mem.sh Au-14-4 320 Lane7
-sbatch run_bwa_mem.sh Au-14-5 320 Lane7
-sbatch run_bwa_mem.sh Au-14-6 320 Lane7
-sbatch run_bwa_mem.sh Au-14-7 320 Lane7
-sbatch run_bwa_mem.sh Au-14-8 320 Lane7
-sbatch run_bwa_mem.sh Au-14-1 320 Lane8
-sbatch run_bwa_mem.sh Au-14-2 320 Lane8
-sbatch run_bwa_mem.sh Au-14-3 320 Lane8
-sbatch run_bwa_mem.sh Au-14-4 320 Lane8
-sbatch run_bwa_mem.sh Au-14-5 320 Lane8
-sbatch run_bwa_mem.sh Au-14-6 320 Lane8
-sbatch run_bwa_mem.sh Au-14-7 320 Lane8
-sbatch run_bwa_mem.sh Au-14-8 320 Lane8
-sbatch run_bwa_mem.sh Au-95-1 320 Lane7
-sbatch run_bwa_mem.sh Au-95-2 320 Lane7
-sbatch run_bwa_mem.sh Au-95-3 320 Lane7
-sbatch run_bwa_mem.sh Au-95-4 320 Lane7
-sbatch run_bwa_mem.sh Au-95-5 320 Lane7
-sbatch run_bwa_mem.sh Au-95-6 320 Lane7
-sbatch run_bwa_mem.sh Au-95-7 320 Lane7
-sbatch run_bwa_mem.sh Au-95-8 320 Lane7
-sbatch run_bwa_mem.sh Au-95-1 320 Lane8
-sbatch run_bwa_mem.sh Au-95-2 320 Lane8
-sbatch run_bwa_mem.sh Au-95-3 320 Lane8
-sbatch run_bwa_mem.sh Au-95-4 320 Lane8
-sbatch run_bwa_mem.sh Au-95-5 320 Lane8
-sbatch run_bwa_mem.sh Au-95-6 320 Lane8
-sbatch run_bwa_mem.sh Au-95-7 320 Lane8
-sbatch run_bwa_mem.sh Au-95-8 320 Lane8
+
+sbatch run_bwa_mem_serial.sh Au-01-1 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo 
+sbatch run_bwa_mem_serial.sh Au-01-2 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-01-3 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-01-4 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-01-5 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-01-6 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-01-7 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-01-8 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-01-1 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-01-2 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-01-3 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-01-4 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-01-5 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-01-6 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-01-7 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-01-8 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-1 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-2 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-3 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-4 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-5 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-6 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-7 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-8 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-1 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-2 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-3 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-4 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-5 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-6 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-7 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-14-8 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-1 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-2 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-3 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-4 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-5 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-6 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-7 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-8 320 L7 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-1 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-2 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-3 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-4 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-5 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-6 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-7 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
+sbatch run_bwa_mem_serial.sh Au-95-8 320 L8 /n/holyscratch/edwards_lab/HOFI_new/Genome/final.assembly.homo
