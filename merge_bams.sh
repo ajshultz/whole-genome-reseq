@@ -3,13 +3,15 @@
 #SBATCH -p serial_requeue
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --mem 8000
-#SBATCH -t 24:00:00
+#SBATCH --mem 4000
+#SBATCH -t 3:00:00
 #SBATCH -J merge
 #SBATCH -o mergebams_%j.out
 #SBATCH -e mergebams_%j.err
 
 #merge output for each species
+
+module load centos6/samtools-0.1.19-fasrc01_gcc-4.4.7
 
 SPEC=$1
 RAW=$(ls $SPEC*.sorted.bam)
