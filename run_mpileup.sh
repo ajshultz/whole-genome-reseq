@@ -12,4 +12,4 @@
 source new-modules.sh
 module load samtools
 
-samtools mpileup -ugDf /n/regal/hofi/Genome/final.assembly.homo.fa ../mapping/*.clean.bam | bcftools view -cvg - > Au_all.raw.vcf 
+samtools mpileup -ugDf /n/regal/edwards_lab/hofi/Genome/final.assembly.homo.fa ../mapping/*.clean.bam | bcftools view -cvg - > Au_all.raw.vcf 
