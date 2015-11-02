@@ -9,8 +9,10 @@
 #SBATCH -o bwa_mem_%j.out
 #SBATCH -e bwa_mem_%j.err
 
-module load centos6/bwa-0.7.7
-module load centos6/samtools-0.1.19-fasrc01_gcc-4.4.7
+
+source new-modules.sh
+module load bwa
+module load samtools
 
 GENOME=$1
 LIB=$2
