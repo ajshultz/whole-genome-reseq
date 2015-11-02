@@ -9,4 +9,7 @@
 #SBATCH -o bwa_index_%j.out
 #SBATCH -e bwa_index_%j.err
 
+source new-modules.sh
+module load bwa
+
 bwa index -p haeMex final.assembly.homo.fa
