@@ -11,7 +11,8 @@
 
 #merge output for each species
 
-module load centos6/samtools-0.1.19-fasrc01_gcc-4.4.7
+source new-modules.sh
+module load samtools
 
 SPEC=$1
 RAW=$(ls $SPEC*.sorted.bam)
