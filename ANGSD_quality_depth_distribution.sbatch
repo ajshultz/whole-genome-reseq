@@ -12,7 +12,7 @@
 #SBATCH --mail-user=allisonjshultz@gmail.com
 
 source new-modules.sh
-module load ansd
+module load angsd
 
 REF=../genome/final.assembly.homo.fa
 
