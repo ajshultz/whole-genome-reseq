@@ -13,7 +13,7 @@
 
 
 source new-modules.sh
-module load ansd
+module load angsd
 
 REF=../genome/final.assembly.homo.fa
 
