@@ -3,8 +3,8 @@
 #SBATCH -p serial_requeue
 #SBATCH -n 4
 #SBATCH -N 1
-#SBATCH --mem 4000
-#SBATCH -t 0-04:00:00
+#SBATCH --mem 8000
+#SBATCH -t 0-12:00:00
 #SBATCH -J angsd_quality
 #SBATCH -o angsd_quality_%j.out
 #SBATCH -e angsd_quality_%j.err
