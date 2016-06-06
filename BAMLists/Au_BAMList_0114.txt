@@ -1,0 +1,16 @@
+Au-95-1.clean.bam
+Au-95-2.clean.bam
+Au-95-3.clean.bam
+Au-95-4.clean.bam
+Au-95-5.clean.bam
+Au-95-6.clean.bam
+Au-95-7.clean.bam
+Au-95-8.clean.bam
+Au-01-1.clean.bam
+Au-01-2.clean.bam
+Au-01-3.clean.bam
+Au-01-4.clean.bam
+Au-01-5.clean.bam
+Au-01-6.clean.bam
+Au-01-7.clean.bam
+Au-01-8.clean.bam
