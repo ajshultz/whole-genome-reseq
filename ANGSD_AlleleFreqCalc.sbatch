@@ -6,14 +6,14 @@
 #SBATCH --mem 12000
 #SBATCH -t 2-00:00:00
 #SBATCH -J angsd
-#SBATCH -o angsd_%j.out
-#SBATCH -e angsd_%j.err
+#SBATCH -o angsd_af_%j.out
+#SBATCH -e angsd_af_%j.err
 #SBATCH --mail-type=END
 #SBATCH --mail-user=allisonjshultz@gmail.com
 
 
 source new-modules.sh
-module load angsd
+module load angsd/0.911-fasrc01
 
 REF=../genome/final.assembly.homo.fa
 
