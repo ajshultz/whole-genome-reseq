@@ -25,10 +25,10 @@ YEAR=$1
 #Filters are only keep unique hits, remove "bad" reads, no trimming, (didn't use filter for reads where mates could be mapped), only keep reads with a minimum mapping quality of 20, minimum read depth of 30 and maximum of 100 (based on the distribution), only keep sites where there are data for at least half of the individuals. Minimum base quality of 20
 
 #1) Calculate "global estimate" of the SFS
-angsd -bam Au_BAMList_${YEAR}.txt -anc $REF -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -minInd 4 -setMinDepth 30 -setMaxDepth 100 -out results/Au_${YEAR} -nThreads 12 -GL 1 -doSaf 1
+#angsd -bam Au_BAMList_${YEAR}.txt -anc $REF -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -minInd 4 -setMinDepth 30 -setMaxDepth 100 -out results/Au_${YEAR} -nThreads 12 -GL 1 -doSaf 1
 
 # Obtain the ML estimate of the SFS
-realSFS results/Au_${YEAR}.saf.idx -nThreads 12 > results/Au_${YEAR}.sfs
+realSFS results/Au_${YEAR}.saf.idx -P 12 > results/Au_${YEAR}.sfs
 
 #2) Calculate theta for each site
 angsd -bam Au_BAMList_${YEAR}.txt -anc $REF -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -minInd 4 -setMinDepth 30 -setMaxDepth 100 -out results/Au_${YEAR} -nThreads 12 -GL 1 -doThetas 1 -doSaf 1 -pest results/Au_${YEAR}.sfs
