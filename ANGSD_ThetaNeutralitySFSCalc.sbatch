@@ -3,7 +3,7 @@
 #SBATCH -p general
 #SBATCH -n 12
 #SBATCH -N 1
-#SBATCH --mem 12000
+#SBATCH --mem 32000
 #SBATCH -t 0-16:00:00
 #SBATCH -J angsd
 #SBATCH -o angsd_sfs_%j.out
