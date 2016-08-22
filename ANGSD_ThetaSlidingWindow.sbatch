@@ -20,4 +20,4 @@ REF=../genome/final.assembly.homo.fa
 YEAR=$1
 
 #3) Estimate Tajima's D and other statistics for a sliding window
-thetaStat do_stat results/Au_${YEAR}.thetas.gz -win 1000 -step 200 -outnames results/Au_${YEAR}.theta.thetasWindow_1kb.gz
+thetaStat do_stat results/Au_${YEAR}.thetas.gz -win 1000 -step 200 -outnames results/Au_${YEAR}.theta.thetasWindow_1kb.gz -nChr 6970
