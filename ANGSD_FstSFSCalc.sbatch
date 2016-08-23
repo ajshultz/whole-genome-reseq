@@ -1,13 +1,13 @@
 #!/bin/bash
 
 #SBATCH -p general
-#SBATCH -n 16
+#SBATCH -n 24
 #SBATCH -N 1
-#SBATCH --mem 32000
+#SBATCH --mem 92000
 #SBATCH -t 0-16:00:00
 #SBATCH -J angsd
-#SBATCH -o angsd_sfs_%j.out
-#SBATCH -e angsd_sfs_%j.err
+#SBATCH -o angsd_fst_%j.out
+#SBATCH -e angsd_fst_%j.err
 #SBATCH --mail-type=END
 #SBATCH --mail-user=allisonjshultz@gmail.com
 
@@ -27,9 +27,9 @@ REF=../genome/final.assembly.homo.fa
 #angsd -bam Au_BAMList_14.txt -anc $REF -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -minInd 4 -setMinDepth 30 -setMaxDepth 100 -out results/Au_14 -nThreads 16 -GL 1 -doSaf 1
 
 # Obtain the pairwise population 2dsfs
-realSFS results/Au_95.saf.idx results/Au_01.saf.idx -P 16 > results/Au_95.01.sfs.ml
-realSFS results/Au_95.saf.idx results/Au_14.saf.idx -P 16 > results/Au_95.14.sfs.ml
-realSFS results/Au_01.saf.idx results/Au_14.saf.idx -P 16 > results/Au_01.14.sfs.ml
+realSFS results/Au_95.saf.idx results/Au_01.saf.idx -P 24 > results/Au_95.01.sfs.ml
+realSFS results/Au_95.saf.idx results/Au_14.saf.idx -P 24 > results/Au_95.14.sfs.ml
+realSFS results/Au_01.saf.idx results/Au_14.saf.idx -P 24 > results/Au_01.14.sfs.ml
 
 #Prepare fst for analysis and get global estimates
 realSFS fst index results/Au_95.saf.idx results/Au_01.saf.idx results/Au_14.saf.idx -sfs results/Au_95.01.sfs.ml -sfs results/Au_95.14.sfs.ml -sfs results/Au_01.14.sfs.ml -fstout results/all_Au_fst
