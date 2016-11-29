@@ -24,7 +24,7 @@ echo ${SAMPLE}
 echo ${FASTQDIR}/${SAMPLE}_${BARCODE}.R1.fastq.gz
 
 echo java -Xmx4g -jar ~/sw/bin/picard.jar FastqToSam \
-    FASTQ=${FASTQDIR}/$S{AMPLE}_${BARCODE}.R1.fastq.gz \
+    FASTQ=${FASTQDIR}/${SAMPLE}_${BARCODE}.R1.fastq.gz \
     FASTQ2=${FASTQDIR}/${SAMPLE}_${BARCODE}.R2.fastq.gz \
     OUTPUT=${SAMPLE}_${SAMPLEREPNUM}_fastqtosam.bam \
     READ_GROUP_NAME=${FLOWCELL}.${LANE} \
