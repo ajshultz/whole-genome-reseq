@@ -29,4 +29,4 @@ java -Xmx4g -jar ~/sw/bin/picard.jar FastqToSam \
     PLATFORM_UNIT=$FLOWCELL.$LANE.$IND \
     PLATFORM=ILLUMINA \
     SEQUENCING_CENTER=BAUER \
-    RUN_DATE=$DATET00:00:00-0400
+    RUN_DATE=$DATE
