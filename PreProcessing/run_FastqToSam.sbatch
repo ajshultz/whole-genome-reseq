@@ -17,8 +17,9 @@ FLOWCELL=$5
 LANE=$6
 DATE=$7
 
+module load java/1.8.0_45-fasrc01
 
-java -Xmx4G -jar picard.jar FastqToSam \
+java -Xmx4g -jar ~/sw/bin/picard.jar FastqToSam \
     FASTQ=$FASTQDIR/$IND_$BARCODE.R1.fastq.gz \ #first read file of pair
     FASTQ2=$FASTQDIR/$IND_$BARCODE.R2.fastq.gz \ #second read file of pair
     OUTPUT=$IND_$INDREPNUM_fastqtosam.bam \
