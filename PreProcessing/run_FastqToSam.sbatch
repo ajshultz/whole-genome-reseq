@@ -20,12 +20,12 @@ DATE=$7
 module load java/1.8.0_45-fasrc01
 
 java -Xmx4g -jar ~/sw/bin/picard.jar FastqToSam \
-    FASTQ=$FASTQDIR/$IND_$BARCODE.R1.fastq.gz \ #first read file of pair
-    FASTQ2=$FASTQDIR/$IND_$BARCODE.R2.fastq.gz \ #second read file of pair
+    FASTQ=$FASTQDIR/$IND_$BARCODE.R1.fastq.gz \
+    FASTQ2=$FASTQDIR/$IND_$BARCODE.R2.fastq.gz \
     OUTPUT=$IND_$INDREPNUM_fastqtosam.bam \
-    READ_GROUP_NAME=$FLOWCELL.$LANE \ #required; changed from default of A
-    SAMPLE_NAME=$IND \ #required
-    LIBRARY_NAME=$IND \ #required 
+    READ_GROUP_NAME=$FLOWCELL.$LANE \
+    SAMPLE_NAME=$IND \
+    LIBRARY_NAME=$IND \
     PLATFORM_UNIT=$FLOWCELL.$LANE.$IND \
     PLATFORM=ILLUMINA \
     SEQUENCING_CENTER=BAUER \
