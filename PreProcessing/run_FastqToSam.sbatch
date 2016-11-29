@@ -4,7 +4,7 @@
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem 4000
-#SBATCH -t 4:00:00
+#SBATCH -t 0:05:00
 #SBATCH -o ./logs/fastq_sam_%j.out
 #SBATCH -e ./logs/fastq_sam_%j.err
 #SBATCH --constrain holyib
@@ -19,7 +19,11 @@ DATE=$7
 
 module load java/1.8.0_45-fasrc01
 
-java -Xmx4g -jar ~/sw/bin/picard.jar FastqToSam \
+echo $IND
+
+echo $FASTQDIR/$IND_$BARCODE.R1.fastq.gz
+
+echo java -Xmx4g -jar ~/sw/bin/picard.jar FastqToSam \
     FASTQ=$FASTQDIR/$IND_$BARCODE.R1.fastq.gz \
     FASTQ2=$FASTQDIR/$IND_$BARCODE.R2.fastq.gz \
     OUTPUT=$IND_$INDREPNUM_fastqtosam.bam \
@@ -30,3 +34,4 @@ java -Xmx4g -jar ~/sw/bin/picard.jar FastqToSam \
     PLATFORM=ILLUMINA \
     SEQUENCING_CENTER=BAUER \
     RUN_DATE=$DATE
+    
