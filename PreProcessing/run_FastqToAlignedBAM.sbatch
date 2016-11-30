@@ -18,7 +18,7 @@ LANE=$6
 DATE=$7
 
 module load java/1.8.0_45-fasrc01
-module load bwa/0.7.9a-fasrc02
+module load bwa/0.7.9a-fasrc01
 
 java -Xmx4g -jar ~/sw/bin/picard.jar FastqToSam \
     FASTQ=${FASTQDIR}/${SAMPLE}_${BARCODE}.R1.fastq.gz \
