@@ -44,11 +44,12 @@ java -Xmx4G -jar ~/sw/bin/picard.jar SamToFastq \
 	CLIPPING_ATTRIBUTE=XT CLIPPING_ACTION=2 INTERLEAVE=true NON_PF=true \
 	TMP_DIR=./tmp
  
-bwa mem -M -t 1 -p haeMex ${SAMPLE}_${SAMPLEREPNUM}_samtofastq_interleaved.fq > ${SAMPLE}_${SAMPLEREPNUM}_bwa_mem.sam
+bwa mem -M -t 1 -p haeMex ${SAMPLE}_${SAMPLEREPNUM}_samtofastq_interleaved.fq \
+	> ${SAMPLE}_${SAMPLEREPNUM}_bwa_mem.sam
 
 java -Xmx4G -jar ~/sw/bin/picard.jar MergeBamAlignment \
 	ALIGNED_BAM=${SAMPLE}_${SAMPLEREPNUM}_bwa_mem.sam \
-	UNMAPPED_BAM=${SAMPLE}_${SAMPLEREPNUM}_fastqtosam.bam \ 
+	UNMAPPED_BAM=${SAMPLE}_${SAMPLEREPNUM}_fastqtosam.bam \
 	OUTPUT=${SAMPLE}_${SAMPLEREPNUM}_mergebamalign.bam \
 	R=final.assembly.homo.fa CREATE_INDEX=true ADD_MATE_CIGAR=true \
 	CLIP_ADAPTERS=false CLIP_OVERLAPPING_READS=true \
