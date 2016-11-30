@@ -20,23 +20,7 @@ DATE=$7
 module load java/1.8.0_45-fasrc01
 module load bwa/0.7.9a-fasrc01
 
-java -Xmx4g -jar ~/sw/bin/picard.jar FastqToSam \
-    FASTQ=${FASTQDIR}/${SAMPLE}_${BARCODE}.R1.fastq.gz \
-    FASTQ2=${FASTQDIR}/${SAMPLE}_${BARCODE}.R2.fastq.gz \
-    OUTPUT=${SAMPLE}_${SAMPLEREPNUM}_fastqtosam.bam \
-    READ_GROUP_NAME=${FLOWCELL}.${LANE} \
-    SAMPLE_NAME=${SAMPLE} \
-    LIBRARY_NAME=${SAMPLE} \
-    PLATFORM_UNIT=${FLOWCELL}.${LANE}.${SAMPLE} \
-    PLATFORM=ILLUMINA \
-    SEQUENCING_CENTER=BAUER \
-    RUN_DATE=${DATE}
-    
-java -Xmx4g -jar ~/sw/bin/picard.jar MarkIlluminaAdapters \
-	I=${SAMPLE}_${SAMPLEREPNUM}_fastqtosam.bam \
-	O=${SAMPLE}_${SAMPLEREPNUM}_markilluminaadapters.bam \
-	M=${SAMPLE}_${SAMPLEREPNUM}_markilluminaadapters_metrics.txt
-	TMP_DIR=./tmp
+
 	
 java -Xmx4G -jar ~/sw/bin/picard.jar SamToFastq \
 	I=${SAMPLE}_${SAMPLEREPNUM}_markilluminaadapters.bam \
