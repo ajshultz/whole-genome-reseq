@@ -20,18 +20,18 @@ DATE=$7
 module load java/1.8.0_45-fasrc01
 module load bwa/0.7.9a-fasrc01
 
-
-	
 java -Xmx4G -jar ~/sw/bin/picard.jar SamToFastq \
 	I=${SAMPLE}_${SAMPLEREPNUM}_markilluminaadapters.bam \
-	FASTQ=/dev/stdout \
+	FASTQ=${SAMPLE}_${SAMPLEREPNUM}_samtofastq_interleaved.fq \
 	CLIPPING_ATTRIBUTE=XT CLIPPING_ACTION=2 INTERLEAVE=true NON_PF=true \
-	TMP_DIR=./tmp | \ 
-bwa mem -M -t 1 -p haeMex /dev/stdin | \  
+	TMP_DIR=./tmp
+ 
+bwa mem -M -t 1 -p haeMex ${SAMPLE}_${SAMPLEREPNUM}_samtofastq_interleaved.fq > ${SAMPLE}_${SAMPLEREPNUM}_bwa_mem.sam
+
 java -Xmx4G -jar ~/sw/bin/picard.jar MergeBamAlignment \
-	ALIGNED_BAM=/dev/stdin \
+	ALIGNED_BAM=${SAMPLE}_${SAMPLEREPNUM}_bwa_mem.sam \
 	UNMAPPED_BAM=${SAMPLE}_${SAMPLEREPNUM}_fastqtosam.bam \ 
-	OUTPUT=${SAMPLE}_${SAMPLEREPNUM}_mapped.bam \
+	OUTPUT=${SAMPLE}_${SAMPLEREPNUM}_mergebamalign.bam \
 	R=final.assembly.homo.fa CREATE_INDEX=true ADD_MATE_CIGAR=true \
 	CLIP_ADAPTERS=false CLIP_OVERLAPPING_READS=true \
 	INCLUDE_SECONDARY_ALIGNMENTS=true MAX_INSERTIONS_OR_DELETIONS=-1 \
