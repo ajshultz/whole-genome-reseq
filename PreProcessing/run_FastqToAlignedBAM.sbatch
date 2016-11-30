@@ -38,7 +38,7 @@ java -Xmx4g -jar ~/sw/bin/picard.jar MarkIlluminaAdapters \
 	M=${SAMPLE}_${SAMPLEREPNUM}_markilluminaadapters_metrics.txt
 	TMP_DIR=./tmp
 	
-java -Xmx4G -jar /~/sw/bin/picard.jar SamToFastq \
+java -Xmx4G -jar ~/sw/bin/picard.jar SamToFastq \
 	I=${SAMPLE}_${SAMPLEREPNUM}_markilluminaadapters.bam \
 	FASTQ=/dev/stdout \
 	CLIPPING_ATTRIBUTE=XT CLIPPING_ACTION=2 INTERLEAVE=true NON_PF=true \
