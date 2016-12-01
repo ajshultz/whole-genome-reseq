@@ -3,8 +3,8 @@
 #SBATCH -p serial_requeue
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --mem 6000
-#SBATCH -t 0-4:00
+#SBATCH --mem 10000
+#SBATCH -t 0-8:00
 #SBATCH -o ./logs/fastq_sam_%j.out
 #SBATCH -e ./logs/fastq_sam_%j.err
 #SBATCH --constrain holyib
@@ -20,7 +20,7 @@ DATE=$7
 module load java/1.8.0_45-fasrc01
 module load bwa/0.7.9a-fasrc01
 
-java -Xmx4g -jar ~/sw/bin/picard.jar FastqToSam \
+java -Xmx8g -jar ~/sw/bin/picard.jar FastqToSam \
     FASTQ=${FASTQDIR}/${SAMPLE}_${BARCODE}.R1.fastq.gz \
     FASTQ2=${FASTQDIR}/${SAMPLE}_${BARCODE}.R2.fastq.gz \
     OUTPUT=${SAMPLE}_${SAMPLEREPNUM}_fastqtosam.bam \
@@ -32,13 +32,13 @@ java -Xmx4g -jar ~/sw/bin/picard.jar FastqToSam \
     SEQUENCING_CENTER=BAUER \
     RUN_DATE=${DATE}
     
-java -Xmx4g -jar ~/sw/bin/picard.jar MarkIlluminaAdapters \
+java -Xmx8g -jar ~/sw/bin/picard.jar MarkIlluminaAdapters \
 	I=${SAMPLE}_${SAMPLEREPNUM}_fastqtosam.bam \
 	O=${SAMPLE}_${SAMPLEREPNUM}_markilluminaadapters.bam \
 	M=${SAMPLE}_${SAMPLEREPNUM}_markilluminaadapters_metrics.txt
 	TMP_DIR=./tmp
 	
-java -Xmx4G -jar ~/sw/bin/picard.jar SamToFastq \
+java -Xmx8g -jar ~/sw/bin/picard.jar SamToFastq \
 	I=${SAMPLE}_${SAMPLEREPNUM}_markilluminaadapters.bam \
 	FASTQ=${SAMPLE}_${SAMPLEREPNUM}_samtofastq_interleaved.fq \
 	CLIPPING_ATTRIBUTE=XT CLIPPING_ACTION=2 INTERLEAVE=true NON_PF=true \
@@ -47,7 +47,7 @@ java -Xmx4G -jar ~/sw/bin/picard.jar SamToFastq \
 bwa mem -M -t 1 -p haeMex ${SAMPLE}_${SAMPLEREPNUM}_samtofastq_interleaved.fq \
 	> ${SAMPLE}_${SAMPLEREPNUM}_bwa_mem.sam
 
-java -Xmx4G -jar ~/sw/bin/picard.jar MergeBamAlignment \
+java -Xmx8g -jar ~/sw/bin/picard.jar MergeBamAlignment \
 	ALIGNED_BAM=${SAMPLE}_${SAMPLEREPNUM}_bwa_mem.sam \
 	UNMAPPED_BAM=${SAMPLE}_${SAMPLEREPNUM}_fastqtosam.bam \
 	OUTPUT=${SAMPLE}_${SAMPLEREPNUM}_mergebamalign.bam \
