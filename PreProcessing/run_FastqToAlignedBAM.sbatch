@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#SBATCH -p general
+#SBATCH -p serial_requeue
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --mem 4000
-#SBATCH -t 0-8:00
+#SBATCH --mem 6000
+#SBATCH -t 0-4:00
 #SBATCH -o ./logs/fastq_sam_%j.out
 #SBATCH -e ./logs/fastq_sam_%j.err
 #SBATCH --constrain holyib

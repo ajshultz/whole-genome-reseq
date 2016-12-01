@@ -1,3 +1,6 @@
 #!/bin/bash
 
-sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/run_FastqToAlignedBAM.sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/rawdata/161109_D00742_0148_AC9ECWANXX/Lane8.indexlength_6/Fastq ME_01_02 GTAGGC 1 C9ECWANXX 8 2016-11-09
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/run_FastqToAlignedBAM.sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/rawdata/161109_D00742_0148_AC9ECWANXX/Lane8.indexlength_6/Fastq ME_90_01 CTCACG  1 C9ECWANXX 8 2016-11-09
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/run_FastqToAlignedBAM.sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/rawdata/161119_D00742_0156_BC9U28ANXX/Lane5.indexlength_6/Fastq WA_01_08 AGCTTT  3 C9U28ANXX 5 2016-11-19
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/run_FastqToAlignedBAM.sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/rawdata/161110_D00742_0151_BC9DJ6ANXX/Lane6.indexlength_6/Fastq IL_14_01 ATGACT  1 C9DJ6ANXX 6 2016-11-10
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/run_FastqToAlignedBAM.sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/rawdata/161115_D00742_0154_AC9J4EANXX/Lane5.indexlength_6/Fastq OH_01_15 GTAGAG  3 C9J4EANXX 5 2016-11-15
