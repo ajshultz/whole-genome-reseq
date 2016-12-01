@@ -56,3 +56,11 @@ java -Xmx4G -jar ~/sw/bin/picard.jar MergeBamAlignment \
 	INCLUDE_SECONDARY_ALIGNMENTS=true MAX_INSERTIONS_OR_DELETIONS=-1 \
 	PRIMARY_ALIGNMENT_STRATEGY=MostDistant ATTRIBUTES_TO_RETAIN=XS \
 	TMP_DIR=./tmp
+	
+if [ -f ${SAMPLE}_${SAMPLEREPNUM}_mergebamalign.bam ]
+then
+  rm ${SAMPLE}_${SAMPLEREPNUM}_fastqtosam.bam
+  rm ${SAMPLE}_${SAMPLEREPNUM}_markilluminaadapters.bam
+  rm ${SAMPLE}_${SAMPLEREPNUM}_samtofastq_interleaved.fq
+  rm ${SAMPLE}_${SAMPLEREPNUM}_bwa_mem.sam
+fi
