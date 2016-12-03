@@ -4,7 +4,7 @@
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem 16000
-#SBATCH -t 6-00:00
+#SBATCH -t 2-00:00
 #SBATCH -o ./logs/dedup_%j.out
 #SBATCH -e ./logs/dedup_%j.err
 #SBATCH --constrain holyib
