@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#SBATCH -p serial_requeue
+#SBATCH -p general
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem 10000
-#SBATCH -t 0-8:00
+#SBATCH -t 0-12:00
 #SBATCH -o ./logs/fastq_sam_%j.out
 #SBATCH -e ./logs/fastq_sam_%j.err
 #SBATCH --constrain holyib
@@ -22,7 +22,7 @@ module load java/1.8.0_45-fasrc01
 module load bwa/0.7.9a-fasrc01
 
 java -Xmx8g -jar ~/sw/bin/picard.jar FastqToSam \
-    FASTQ=${FASTQDIR}/${AURBURNNUM}_${BARCODE}.R1.fastq.gz \
+    FASTQ=${FASTQDIR}/${AUBURNNUM}_${BARCODE}.R1.fastq.gz \
     FASTQ2=${FASTQDIR}/${AUBURNNUM}_${BARCODE}.R2.fastq.gz \
     OUTPUT=${SAMPLE}_${SAMPLEREPNUM}_fastqtosam.bam \
     READ_GROUP_NAME=${FLOWCELL}.${LANE} \
