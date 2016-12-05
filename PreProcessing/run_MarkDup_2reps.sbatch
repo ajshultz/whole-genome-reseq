@@ -17,4 +17,4 @@ java -Xmx8g -jar ~/sw/bin/picard.jar MarkDuplicates TMP_DIR=tmp \
 I=${SAMPLE}_1_mergebamalign.bam \
 I=${SAMPLE}_2_mergebamalign.bam \
 O=${SAMPLE}.dedup.bam METRICS_FILE=${SAMPLE}.dedup.metrics.txt \
-REMOVE_DUPLICATES=true TAGGING_POLICY=All
+REMOVE_DUPLICATES=false TAGGING_POLICY=All

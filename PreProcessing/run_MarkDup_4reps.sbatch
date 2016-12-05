@@ -19,4 +19,4 @@ I=${SAMPLE}_2_mergebamalign.bam \
 I=${SAMPLE}_3_mergebamalign.bam \
 I=${SAMPLE}_4_mergebamalign.bam \
 O=${SAMPLE}.dedup.bam METRICS_FILE=${SAMPLE}.dedup.metrics.txt \
-REMOVE_DUPLICATES=true TAGGING_POLICY=All
+REMOVE_DUPLICATES=false TAGGING_POLICY=All
