@@ -3,40 +3,30 @@
 import sys
 
 
-#Take a file with the list of all files in a directory, identify which libraries do not have aligned bams, and create a new submission file to rerun them. First input should be list of all files in directory, second should be original submission file, third should be name of new input file.
+#Take a file with the list of individuals, and create an sbatch file for indel realignment file creation. First argument is file with individuals, second is desired sbatch file name.
 
-dirListFile = sys.argv[1]
-origSubmitFile = sys.argv[2]
-newSubmitFile = sys.argv[3]
+indListFile = sys.argv[1]
+newSbatchFile = sys.argv[2]
 
-dirList = open(dirListFile,"r")
-origSubmit = open(origSubmitFile,"r")
-newSubmit = open(newSubmitFile,"w")
+indList = open(indListFile,"r")
+newSbatch = open(newSbatchFile,"w")
 
-commands = {}
+#Create SBATCH header
+newSbatch.write("#!/bin/bash\n\n#SBATCH -p general\n#SBATCH -n 1\n#SBATCH -N 1\n#SBATCH --mem 24000\n#SBATCH -t 2-00:00\n#SBATCH -o ./logs/indelcreator_%j.out\n#SBATCH -e ./logs/indelcreator_%j.err\n#SBATCH --constrain holyib\n\n")
 
-for line in origSubmit:
-	if line[0] == "#":
-		newSubmit.write(line+"\n")
-	else:
-		splitline = line.split(" ")
-		sample = splitline[3]+"_"+splitline[5]
-		commands[sample] = line
+#Module loading
+newSbatch.write("module load java/1.8.0_45-fasrc01\n\n")
 
-successful = []
-	
-for line in dirList:
-	splitline = line.strip().split("_")
-	if splitline[-1] == "mergebamalign.bam":
-		successful.append(line[0:10])
-	else:
-		pass
-		
-for key in commands.keys():
-	if key not in successful:
-		newSubmit.write(commands[key])
-		
+#Beginning of command
+newSbatch.write("java -Xmx8g -jar ~/sw/bin/GenomeAnalysisTK.jar \\\n-T RealignerTargetCreator \\\n-R final.assembly.homo.fa \\\n")
 
-dirList.close()
-origSubmit.close()
-newSubmit.close()
+inds = []
+
+for line in indList:
+	line = line.strip()
+	newSbatch.write("-I %s.dedup.sorted.bam \\\n"%line)
+
+newSbatch.write("-o HFCCCP_indel.intervals")
+
+indList.close()
+newSbatch.close()
