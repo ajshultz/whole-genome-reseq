@@ -247,4 +247,4 @@ java -Xmx16g -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -I CP_06.dedup.sorted.bam \
 -I CP_07.dedup.sorted.bam \
 -I CP_08.dedup.sorted.bam \
--o HFCCCP_indel4.intervals
+-o HFCCCP_indel.intervals
