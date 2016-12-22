@@ -4,14 +4,14 @@
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem 24000
-#SBATCH -t 2-00:00
+#SBATCH -t 7-00:00
 #SBATCH -o ./logs/indelcreator_%j.out
 #SBATCH -e ./logs/indelcreator_%j.err
 #SBATCH --constrain holyib
 
 module load java/1.8.0_45-fasrc01
 
-java -Xmx8g -jar ~/sw/bin/GenomeAnalysisTK.jar \
+java -Xmx16g -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -T RealignerTargetCreator \
 -R final.assembly.homo.fa \
 -I ME_90_01.dedup.sorted.bam \
@@ -246,4 +246,4 @@ java -Xmx8g -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -I CP_06.dedup.sorted.bam \
 -I CP_07.dedup.sorted.bam \
 -I CP_08.dedup.sorted.bam \
--o HFCCCP_indel.intervals
+-o HFCCCP_indel4.intervals
