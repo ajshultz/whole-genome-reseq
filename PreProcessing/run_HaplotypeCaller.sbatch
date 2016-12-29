@@ -4,7 +4,7 @@
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem 20000
-#SBATCH -t 4-00:00
+#SBATCH -t 7-00:00
 #SBATCH -o ./logs/createvcfs_%j.out
 #SBATCH -e ./logs/createvcfs_%j.err
 #SBATCH --constrain holyib
