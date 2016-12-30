@@ -16,6 +16,8 @@ SAMPLE=$1
 java -Xmx16g -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -T HaplotypeCaller \
 -R ../genome/final.assembly.homo.fa \
+-minPruning 1 \
+-minDanglingBranchLength 1 \
 -I ../preprocess/${SAMPLE}.dedup.sorted.bam \
 --emitRefConfidence GVCF \
 -o ${SAMPLE}.raw.g.vcf
