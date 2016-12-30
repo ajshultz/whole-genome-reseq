@@ -7,7 +7,7 @@
 #SBATCH -t 7-00:00
 #SBATCH -o ./logs/createvcfs_%j.out
 #SBATCH -e ./logs/createvcfs_%j.err
-#SBATCH --constrain holyib
+#SBATCH --constrain=holyib
 
 module load java/1.8.0_45-fasrc01
 
