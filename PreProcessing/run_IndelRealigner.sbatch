@@ -13,7 +13,7 @@ SAMPLE=$1
 
 module load java/1.8.0_45-fasrc01
 
-java -Xmx8g -jar~/sw/bin/GenomeAnalysisTK.jar \
+java -Xmx8g -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -T IndelRealigner \
 -R final.assembly.homo.fa \
 -I ${SAMPLE}.dedup.sorted.bam \
