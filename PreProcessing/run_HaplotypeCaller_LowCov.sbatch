@@ -21,4 +21,3 @@ java -Xmx16g -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -I ../preprocess/${SAMPLE}.dedup.sorted.bam \
 --emitRefConfidence GVCF \
 -o ${SAMPLE}.raw.g.vcf
-
