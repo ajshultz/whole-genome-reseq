@@ -8,7 +8,7 @@
 #SBATCH -o ./logs/indelcreator_%A_%a.out
 #SBATCH -e ./logs/indelcreator_%A_%a.err
 #SBATCH --constrain=holyib
-#SBATCh --array=1-20
+#SBATCH --array=1-20
 
 module load java/1.8.0_45-fasrc01
 
