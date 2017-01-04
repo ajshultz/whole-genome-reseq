@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#SBATCH -p general
+#SBATCH -p serial_requeue
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --mem 12000
-#SBATCH -t 1-00:00
+#SBATCH --mem 6000
+#SBATCH -t 0-01:00
 #SBATCH -o ./logs/realign_%A_%a.out
 #SBATCH -e ./logs/realign_%A_%a.err
 #SBATCH --constrain=holyib
