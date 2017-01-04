@@ -7,7 +7,7 @@
 #SBATCH -t 0-12:00
 #SBATCH -o ./logs/fastq_sam_%j.out
 #SBATCH -e ./logs/fastq_sam_%j.err
-#SBATCH --constrain holyib
+#SBATCH --constrain=holyib
 
 FASTQDIR=$1
 SAMPLE=$2
