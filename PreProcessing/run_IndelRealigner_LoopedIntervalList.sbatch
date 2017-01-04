@@ -47,5 +47,4 @@ I=./interval_list_16/${SAMPLE}_16.realigned.bam \
 I=./interval_list_17/${SAMPLE}_17.realigned.bam \
 I=./interval_list_18/${SAMPLE}_18.realigned.bam \
 I=./interval_list_19/${SAMPLE}_19.realigned.bam \
-#I=./interval_list_20/${SAMPLE}_20.realigned.bam \
 O=./merged_realigned_bams/${SAMPLE}_realigned.bam
