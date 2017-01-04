@@ -20,7 +20,7 @@ do
 java -Xmx8g -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -T IndelRealigner \
 -R ../genome/final.assembly.homo.fa \
-I=../preprocess/${SAMPLE}.dedup.sorted.bam \
+-I ../preprocess/${SAMPLE}.dedup.sorted.bam \
 -targetIntervals ./interval_list_$i/HFCCCP_indel_$i.intervals \
 -L split_fai/final.assembly.homo.fa_$i.interval_list \
 -o ./interval_list_$i/${SAMPLE}_$i.realigned.bam
