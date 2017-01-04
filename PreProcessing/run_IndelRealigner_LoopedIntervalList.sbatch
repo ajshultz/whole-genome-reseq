@@ -64,5 +64,6 @@ then
   for i in {1..20};
   do
   rm ./interval_list_$i/${SAMPLE}_$i.realigned.bam
+  rm ./interval_list_$i/${SAMPLE}_$i.realigned.bai
   done
 fi
