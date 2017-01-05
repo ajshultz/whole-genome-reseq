@@ -6,8 +6,8 @@
 #SBATCH --mem 12000
 #SBATCH -t 2-0:00
 #SBATCH -J angsd_quality
-#SBATCH -o angsd_quality_%j.out
-#SBATCH -e angsd_quality_%j.err
+#SBATCH -o ./logs/angsd_quality_%j.out
+#SBATCH -e ./logs/angsd_quality_%j.err
 #SBATCH --constrain=holyib
 
 source new-modules.sh
