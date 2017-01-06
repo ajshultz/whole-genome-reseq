@@ -3,9 +3,9 @@
 #SBATCH -p general
 #SBATCH -n 12
 #SBATCH -N 1
-#SBATCH --mem 20000
+#SBATCH --mem 36000
 #SBATCH -t 2-0:00:00
-#SBATCH -J angsd
+#SBATCH -J angsd_af
 #SBATCH -o logs/angsd_af_%j.out
 #SBATCH -e logs/angsd_af_%j.err
 #SBATCH --constrain=holyib
