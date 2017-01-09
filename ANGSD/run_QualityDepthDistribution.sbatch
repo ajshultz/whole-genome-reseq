@@ -3,7 +3,7 @@
 #SBATCH -p general
 #SBATCH -n 8
 #SBATCH -N 1
-#SBATCH --mem 36000
+#SBATCH --mem 48000
 #SBATCH -t 3-0:00
 #SBATCH -J angsd_quality
 #SBATCH -o ./logs/angsd_quality_%j.out
