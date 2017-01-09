@@ -3,8 +3,8 @@
 #SBATCH -p general
 #SBATCH -n 12
 #SBATCH -N 1
-#SBATCH --mem 36000
-#SBATCH -t 2-0:00:00
+#SBATCH --mem 60000
+#SBATCH -t 3-0:00:00
 #SBATCH -J angsd_af
 #SBATCH -o logs/angsd_af_%j.out
 #SBATCH -e logs/angsd_af_%j.err
