@@ -4,7 +4,7 @@
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem 12000
-#SBATCH -t 4-00:00
+#SBATCH -t 3-00:00
 #SBATCH -j gvcf
 #SBATCH -o ./logs/gvcf_%A_%a.out
 #SBATCH -e ./logs/gvcf_%A_%a.err
@@ -20,7 +20,7 @@ java -Xmx8g -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -R ../genome/final.assembly.homo.fa \
 -minPruning 1 \
 -minDanglingBranchLength 1 \
--I ../preprocess/${SAMPLE}.dedup.sorted.bam \
+-I ../indelrealign/merged_realigned_bams/${SAMPLE}_realigned.sorted.bam \
 --emitRefConfidence GVCF \
 -o interval_list_${SLURM_ARRAY_TASK_ID}/${SAMPLE}_${SLURM_ARRAY_TASK_ID}.raw.g.vcf \
 -L split_fai_10/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list
