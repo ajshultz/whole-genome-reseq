@@ -5,7 +5,7 @@
 #SBATCH -N 1
 #SBATCH --mem 12000
 #SBATCH -t 3-00:00
-#SBATCH -j gvcf
+#SBATCH -J gvcf
 #SBATCH -o ./logs/gvcf_%A_%a.out
 #SBATCH -e ./logs/gvcf_%A_%a.err
 #SBATCH --constrain=holyib
