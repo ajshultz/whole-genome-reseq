@@ -21,6 +21,6 @@ MININD=$3
 MINCOV=$4
 MAXCOV=$5
 
-#Use GATK model for GL calculation, infer major/minor based on HF reference, calculate Likelhood Ratio Tests comparing samples from different time points.
+#Use Samtools model for GL calculation, infer major/minor based on HF reference, calculate Likelhood Ratio Tests comparing samples from different time points.
 
-angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref ${REF} -out results_LRTInt_Asso2/${SAMPLES}_${SLURM_ARRAY_TASK_ID} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -only_proper_pairs 0 -minQ 20 -minInd ${MININD} -setMinDepth ${MINCOV} -setMaxDepth ${MAXCOV} -doMaf 2 -doMajorMinor 4 -GL 2 -nThreads 6 -ybin ${BAMLISTDIR}/${SAMPLES}_yBin.txt -doAsso 2 -SNP_pval 1e-6 -minMaf 0.10 -doPost 1 -rf split_fai_20_angsd/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list 
+angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref ${REF} -out results_LRTInt_Asso2_GL1/${SAMPLES}_${SLURM_ARRAY_TASK_ID} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -only_proper_pairs 0 -minQ 20 -minInd ${MININD} -setMinDepth ${MINCOV} -setMaxDepth ${MAXCOV} -doMaf 2 -doMajorMinor 4 -GL 1 -nThreads 6 -ybin ${BAMLISTDIR}/${SAMPLES}_yBin.txt -doAsso 2 -SNP_pval 1e-6 -minMaf 0.10 -doPost 1 -rf split_fai_20_angsd/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list 
