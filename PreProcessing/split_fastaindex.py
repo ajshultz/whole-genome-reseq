@@ -4,23 +4,24 @@ import re, sys, os, itertools, sets, getopt        # Load standard modules I oft
 
 
 """
-This script will take in a fasta index (.fai) file (-f <name of file>), number of pieces for desired split (-n <default 10>), and an output directory (-o <output dir>).
+This script will take in a fasta index (.fai) file (-f <name of file>), number of pieces for desired split (-n <default 10>), which program (-p <1 for GATK, 2 for ANGSD, GATK default>), and an output directory (-o <output dir>).
 """
 
 def main(argv):
 	try:
-		opts,args = getopt.getopt(argv,'hf:o:n:',)
+		opts,args = getopt.getopt(argv,'hf:o:n:p:',)
 	except getopt.GetOptError:
-		print "SplitFasta.py -f <name of file> -n <number of splits, default 10> -o <output dir>"
+		print "SplitFasta.py -f <name of file> -n <number of splits, default 10> -p <program: 1 for GATK, 2 for ANGSD> -o <output dir>"
 		sys.exit(2)
 			
 	inputfai=''
 	outputdir = './'
 	n = 10
+	program = 1
 
 	for opt, arg in opts:
 		if opt == "-h":
-			print "SplitFasta.py -f <name of file> -n <number of splits, default 10> -o <output dir>"
+			print "SplitFasta.py -f <name of file> -n <number of splits, default 10> -p <program: 1 for GATK, 2 for ANGSD> -o <output dir>"
 			sys.exit(2)
 		elif opt == "-f":
 			inputfai = arg
@@ -28,6 +29,8 @@ def main(argv):
 			outputdir = arg
 		elif opt == "-n":
 			n = int(arg)
+		elif opt == "-p":
+			p = int(arg)
 	
 	#Open input		
 	fai = open(inputfai,"r")
@@ -68,12 +71,17 @@ def main(argv):
 	for i in range(n):
 		outFile = (outputdir+outHandle+"_"+(str(i+1))+".interval_list")
 		outList.append(open(outFile,"w"))
-						
-	#Append scaffold name to appropriate output file.						
-	for i in range(len(faiList)):
-		outList[fileDes[(i)]-1].write(faiList[i][0]+"\n")
-		
 	
+	if p == 1:			
+	#Append scaffold name to appropriate output file.						
+		for i in range(len(faiList)):
+			outList[fileDes[(i)]-1].write(faiList[i][0]+"\n")
+		
+	elif p == 2:
+		#Append scaffold name to appropriate output file, add colon for ANGSD.						
+		for i in range(len(faiList)):
+			outList[fileDes[(i)]-1].write(faiList[i][0]+":\n")	
+
 	for i in range(n):
 		outList[i].close()
 
