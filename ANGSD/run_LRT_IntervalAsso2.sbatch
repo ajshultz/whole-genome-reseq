@@ -9,7 +9,7 @@
 #SBATCH -o logs/angsd_LRT_%A_%a.out
 #SBATCH -e logs/angsd_LRT_%A_%a.err
 #SBATCH --constrain=holyib
-#SBATCH --array:1-20
+#SBATCH --array=1-20
 
 module load angsd/0.911-fasrc01
 
