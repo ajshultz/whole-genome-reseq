@@ -12,6 +12,8 @@
 
 module load angsd/0.911-fasrc01
 
+$1=SPECIES
+
 #Use angsd to create a Fasta file from the consensus of the three outgroups. Will use most frequent base, or a random tie if necessary.
 
-angsd -bam /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/BamLists/Outgroup_BamList.txt -out results/Outgroup_consensus.fa -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -only_proper_pairs 0 -minQ 20 -doCounts 1 -doFasta 2
+angsd -i /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/preprocess/${SPECIES}.dedup.sorted.bam -out results/Outgroup_consensus.fa -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -only_proper_pairs 0 -minQ 20 -doCounts 1 -doFasta 2
