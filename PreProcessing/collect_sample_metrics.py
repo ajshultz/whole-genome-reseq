@@ -44,26 +44,27 @@ def main(argv):
 	#List files in directory, and search for files with alignment_metrics or dedup.metrics	
 	for file in dirList:
 		fileSplit = file.strip().split(".")
-		if fileSplit[-2] == "alignment_metrics":
-			aMet = open(file,"r")
-			for line in aMet:
-				splitline = line.split("\t")
-				try:
-				#Look for lines with the paired data at the sample level (no read group but sample in sample list, add to dict)
-					if splitline[-3] in samples and splitline [-2] == "" and splitline[0] == "PAIR":
-						alignMetDict[splitline[-3]] = line
-				except (IndexError):
-					pass
-		elif fileSplit[-2] == "metrics" and fileSplit[-3] == "dedup":
-			dMet = open(file,"r")
-			for line in dMet:
-				splitline = line.split("\t")
-				try:
-				#Look for lines with the first element in the sample list, add to dict
-					if splitline[0] in samples:
-						dedupMetDict[splitline[0]] = line
-				except (IndexError):
-					pass
+		if len(fileSplit)>2:
+			if fileSplit[-2] == "alignment_metrics":
+				aMet = open(file,"r")
+				for line in aMet:
+					splitline = line.split("\t")
+					try:
+					#Look for lines with the paired data at the sample level (no read group but sample in sample list, add to dict)
+						if splitline[-3] in samples and splitline [-2] == "" and splitline[0] == "PAIR":
+							alignMetDict[splitline[-3]] = line
+					except (IndexError):
+						pass
+			elif fileSplit[-2] == "metrics" and fileSplit[-3] == "dedup":
+				dMet = open(file,"r")
+				for line in dMet:
+					splitline = line.split("\t")
+					try:
+					#Look for lines with the first element in the sample list, add to dict
+						if splitline[0] in samples:
+							dedupMetDict[splitline[0]] = line
+					except (IndexError):
+						pass
 
 	
 	align = open(alignFile,"w")
