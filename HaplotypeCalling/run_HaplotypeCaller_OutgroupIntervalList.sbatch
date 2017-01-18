@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH -p general
-#SBATCH -n 1
+#SBATCH -n 2
 #SBATCH -N 1
 #SBATCH --mem 12000
 #SBATCH -t 7-00:00
