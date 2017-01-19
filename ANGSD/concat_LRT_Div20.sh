@@ -25,7 +25,7 @@ if [ "$COUNT" -eq "31" ]
 
 then	
 	cp ${SAMPLE}_20_0.lrt0.gz ${SAMPLE}_20.lrt0.gz
-	gunzip ${SAMPLE}.lrt0.gz
+	gunzip ${SAMPLE}_20.lrt0.gz
 	
 	for i in {1..30}
 		do	
