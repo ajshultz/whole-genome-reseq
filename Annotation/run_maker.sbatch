@@ -7,7 +7,7 @@
 #SBATCH -J maker
 #SBATCH -o mk.out
 #SBATCH -e mk.err
-#SBATCH --constrain=holyib
+#SBATCH --constraint=holyib
 
 module load gcc/4.8.2-fasrc01 openmpi/1.8.3-fasrc02 maker/2.31.8-fasrc01
 
