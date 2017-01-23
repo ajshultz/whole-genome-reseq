@@ -7,7 +7,7 @@
 #SBATCH -t 1-00:00
 #SBATCH -o ./logs/realign_%A_%a.out
 #SBATCH -e ./logs/realign_%A_%a.err
-#SBATCH --constrain=holyib
+#SBATCH --constraint=holyib
 #SBATCH --array=1-20
 
 SAMPLE=$1

@@ -8,7 +8,7 @@
 #SBATCH -J angsd_quality
 #SBATCH -o ./logs/angsd_quality_%j.out
 #SBATCH -e ./logs/angsd_quality_%j.err
-#SBATCH --constrain=holyib
+#SBATCH --constraint=holyib
 
 source new-modules.sh
 module load angsd

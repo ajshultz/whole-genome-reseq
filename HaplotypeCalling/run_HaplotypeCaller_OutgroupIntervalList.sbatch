@@ -8,7 +8,7 @@
 #SBATCH -J gvcf
 #SBATCH -o ./logs/gvcf_%A_%a.out
 #SBATCH -e ./logs/gvcf_%A_%a.err
-#SBATCH --constrain=holyib
+#SBATCH --constraint=holyib
 #SBATCH --array=1-30
 
 module load java/1.8.0_45-fasrc01

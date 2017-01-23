@@ -8,7 +8,7 @@
 #SBATCH -J angsd_af
 #SBATCH -o logs/angsd_af_%j.out
 #SBATCH -e logs/angsd_af_%j.err
-#SBATCH --constrain=holyib
+#SBATCH --constraint=holyib
 
 module load angsd/0.911-fasrc01
 

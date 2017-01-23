@@ -7,7 +7,7 @@
 #SBATCH -t 1-00:00
 #SBATCH -o ./logs/dedup_%j.out
 #SBATCH -e ./logs/dedup_%j.err
-#SBATCH --constrain=holyib
+#SBATCH --constraint=holyib
 
 SAMPLE=$1
 
