@@ -78,7 +78,7 @@ sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/Haplotyp
 sleep 1
 sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/HaplotypeCalling/run_HaplotypeCaller_LowCovIntervalListRealigned.sbatch NY_90_07
 sleep 1
-sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/HaplotypeCalling/run_HaplotypeCaller_LowCovIntervalListRealigned.sbatch NY_90_08
+#sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/HaplotypeCalling/run_HaplotypeCaller_LowCovIntervalListRealigned.sbatch NY_90_08
 sleep 1
 sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/HaplotypeCalling/run_HaplotypeCaller_LowCovIntervalListRealigned.sbatch NY_90_09
 sleep 1
