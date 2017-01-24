@@ -11,6 +11,6 @@
 
 module load gcc/5.2.0-fasrc02 openmpi/2.0.1-fasrc01 maker/2.31.8-fasrc01
 
-LD_PRELOAD=/n/sw/fasrcsw/apps/Comp/gcc/4.8.2-fasrc01/openmpi/1.8.3-fasrc02/lib64/libmpi.so
+export LD_PRELOAD=/n/sw/fasrcsw/apps/Comp/gcc/5.2.0-fasrc02/openmpi/2.0.1-fasrc01/lib64/libmpi.so
 
 mpiexec -mca btl ^openib -np 128 maker maker_opts.ctl maker_bopts.ctl maker_exe.ctl -fix_nucleotides
