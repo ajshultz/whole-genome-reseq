@@ -1,3 +1,4 @@
+#!/bin/bash
 sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/HaplotypeCalling/run_HaplotypeCaller_LowCovSpecificIntervalRealigned3.7.sbatch ME_90_07 10
 sleep 1
 sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/HaplotypeCalling/run_HaplotypeCaller_LowCovSpecificIntervalRealigned3.7.sbatch ME_90_08 10
