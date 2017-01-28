@@ -4,7 +4,7 @@
 #SBATCH -n 2
 #SBATCH -N 1
 #SBATCH --mem 8000
-#SBATCH -t 3-00:00
+#SBATCH -t 5-00:00
 #SBATCH -J gvcf
 #SBATCH -o ./logs/gvcf_%j.out
 #SBATCH -e ./logs/gvcf_%j.err
@@ -15,7 +15,7 @@ module load java/1.8.0_45-fasrc01
 SAMPLE=$1
 INTERVALNUM=$2
 
-java -Xmx4g -jar ~/sw/bin/GenomeAnalysisTK.jar \
+java -Xmx4g -XX:ParallelGCThreads=1 -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -T HaplotypeCaller \
 -R ../genome/final.assembly.homo.fa \
 -minPruning 1 \
