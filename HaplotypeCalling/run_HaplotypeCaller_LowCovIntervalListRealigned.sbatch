@@ -20,7 +20,7 @@ SAMPLE=$1
 if [ ! -f interval_list_${SLURM_ARRAY_TASK_ID}/${SAMPLE}_${SLURM_ARRAY_TASK_ID}.raw.g.vcf.idx ]
 then
 
-java -Xmx4g -jar ~/sw/bin/GenomeAnalysisTK.jar \
+java -XX:ParallelGCThreads=1 -Xmx4g -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -T HaplotypeCaller \
 -R ../genome/final.assembly.homo.fa \
 -minPruning 1 \
