@@ -4,27 +4,30 @@ import re, sys, os, itertools, sets, getopt        # Load standard modules I oft
 import numpy, gzip
 
 '''
-Takes a directory (-f, <default .>) and cycles through results from -doCounts pos files to compute the average, median, and standard deviation of coverage for each scaffold. Set up to work for 20 intervals, with interval 20 split up into 30 additional intervals. The output filename is given by -o <filename>
+Takes a directory (-f, <default .>) and cycles through results from -doCounts pos files to compute the average, median, and standard deviation of coverage for each scaffold. Set up to work wiht a specific interval file, given as input <-i interval file>. The output filename is given by -o <filename>. 
 '''
 
 def main(argv):
 	try:
-		opts,args = getopt.getopt(argv,'hd:o:')
+		opts,args = getopt.getopt(argv,'hd:o:i:')
 	except getopt.GetOptError:
-		print "collapse_scaffold_coverage.py -d <directory> -o <output file name>"
+		print "collapse_scaffold_coverage.py -d <directory> -o <output file name> -i <name of input .gzipped interval file>"
 		sys.exit(2)
 			
 	directory = "."
 	outputFile=""
+	intervalFile=""
 
 	for opt, arg in opts:
 		if opt == "-h":
-			print "collapse_scaffold_coverage.py -d <directory> -o <output file name>"
+			print "collapse_scaffold_coverage.py -d <directory> -o <output file name> -i <name of input .gzipped interval file>"
 			sys.exit(2)
 		elif opt == "-d":
 			directory = arg
 		elif opt == "-o":
 			outputFile = arg
+		elif opt == "-i":
+			intervalFile = arg
 
 		
 	dirList = {}
