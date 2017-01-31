@@ -13,4 +13,4 @@
 
 module load python
 
-python ../../whole-genome-reseq/ANGSD/collapse_scaffold_coverage_specificInterval.py -i ./results/All_HF_Int${SLURM_ARRAY_TASK_ID}_Counts.txt.pos.gz -o All_HF_Scaffold_Coverage_Stats_Int${SLURM_ARRAY_TASK_ID}.txt
+python ../whole-genome-reseq/ANGSD/collapse_scaffold_coverage_specificInterval.py -i ./results/All_HF_Int${SLURM_ARRAY_TASK_ID}_Counts.txt.pos.gz -o ./results/All_HF_Scaffold_Coverage_Stats_Int${SLURM_ARRAY_TASK_ID}.txt
