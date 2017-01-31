@@ -12,4 +12,4 @@
 
 module load blast
 
-tblastn -query ./z-linked_proteins/zebra_finch/out.fa -out tae_gut_z-linked_output.txt -outfmt 7 -db HoFi
+tblastn -query ./z-linked_proteins/zebra_finch/Z-linked_proteins.fa -out tae_gut_z-linked_output.txt -outfmt 7 -db HoFi
