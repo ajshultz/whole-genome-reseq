@@ -57,6 +57,7 @@ def main(argv):
 			scaff_res.append(str(round(numpy.std(scaffold_temp[scaff]),1)))
 			scaff_res.append(str(max(scaffold_temp[scaff])))
 			scaffold_res[scaff]=scaff_res
+		print "Interval "+str(i)+" is done."
 
 	for i in intervalList_int20:
 		scaffold_temp = {}
@@ -80,6 +81,7 @@ def main(argv):
 			scaff_res.append(str(round(numpy.std(scaffold_temp[scaff]),1)))
 			scaff_res.append(str(max(scaffold_temp[scaff])))
 			scaffold_res[scaff]=scaff_res
+		print "Interval 20_"+str(i)+" is done."
 
 			
 	scaff_order = sorted(scaffold_res.keys())
