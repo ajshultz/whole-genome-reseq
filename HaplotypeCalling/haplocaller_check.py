@@ -40,6 +40,8 @@ def main(argv):
 	intervalList = range(1,intervalNum+1)
 	newVersionList = open(newVersionFile,"r")
 	output = open(outputFile,"w")
+	
+	output.write("#!/bin/bash\n\n")
 
 	for i in intervalList:
 		dirList["int_"+str(i)] = os.listdir(directory+"/interval_list_"+str(i))
