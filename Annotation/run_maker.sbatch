@@ -5,8 +5,8 @@
 #SBATCH --mem-per-cpu 8000
 #SBATCH -t 8000
 #SBATCH -J maker
-#SBATCH -o mk.out
-#SBATCH -e mk.err
+#SBATCH -o mk_%j.out
+#SBATCH -e mk_%j.err
 #SBATCH --constraint=holyib
 
 module load gcc/5.2.0-fasrc02 openmpi/2.0.1-fasrc01 maker/2.31.8-fasrc01
