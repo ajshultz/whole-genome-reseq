@@ -9,7 +9,7 @@
 #SBATCH -o logs/angsd_doCounts20_%A_%a.out
 #SBATCH -e logs/angsd_doCounts20_%A_%a.err
 #SBATCH --constraint=holyib
-#SBATCH --array=0-30
+#SBATCH --array=0-0
 
 module load angsd/0.911-fasrc01
 
