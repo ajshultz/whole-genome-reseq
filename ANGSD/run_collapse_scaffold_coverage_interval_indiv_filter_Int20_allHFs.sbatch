@@ -9,7 +9,7 @@
 #SBATCH -o ./logs/collapse_counts_%A_%a.out
 #SBATCH -e ./logs/collapse_counts_%A_%a.err
 #SBATCH --constraint=holyib
-#SBATCH --array=20-30
+#SBATCH --array=1-30
 
 module load python
 
