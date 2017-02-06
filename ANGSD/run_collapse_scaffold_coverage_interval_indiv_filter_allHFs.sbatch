@@ -3,7 +3,7 @@
 #SBATCH -p serial_requeue
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --mem 24000
+#SBATCH --mem 48000
 #SBATCH -t 0-08:00
 #SBATCH -J collapse_counts
 #SBATCH -o ./logs/collapse_counts_%A_%a.out
