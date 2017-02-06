@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#SBATCH -p general
+#SBATCH -p serial_requeue
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem 16000
-#SBATCH -t 0-08:00
+#SBATCH -t 0-03:00
 #SBATCH -J collapse_counts
 #SBATCH -o ./logs/collapse_counts_%A_%a.out
 #SBATCH -e ./logs/collapse_counts_%A_%a.err
