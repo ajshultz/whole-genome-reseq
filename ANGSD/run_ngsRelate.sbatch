@@ -16,7 +16,7 @@ POP=$1
 INDCOUNT=$2
 
 #Extract MAF frequencies
-zcat ${POP}_SNPs.mafs.gz | cut -f6 | sed 1d > ${POP}_freq
+zcat results/${POP}_SNPs.mafs.gz | cut -f6 | sed 1d > results/${POP}_freq
 
 #Run ngsRelate between all individual pairs
-ngsRelate -g ${POP}_SNPs.glf.gz -n ${INDCOUNT} -f ${POP}_freq >${POP}_ngsrelate.res
+ngsRelate -g results/${POP}_SNPs.glf.gz -n ${INDCOUNT} -f results/${POP}_freq > results/${POP}_ngsrelate.res
