@@ -89,6 +89,7 @@ def main(argv):
 			#For those sites that pass the filters, add them to the individual scaffold dictionaries, or else write them to the sites to exclude file.
 			if mean_cov_all > lowerLim and mean_cov_seq < upperLim:
 				if scaff not in completed:
+					print scaff
 					completed.append(scaff)
 					for i in range(0,len(ind_order)):
 						ind_res_scaffDict[ind_order[i]][scaff] = [int(counts[i])]
@@ -122,6 +123,8 @@ def main(argv):
 			scaff_res_mean[scaff].append(str(round(numpy.mean(ind_scaff),2)))
 			scaff_res_median[scaff].append(str(int(numpy.median(ind_scaff))))
 			scaff_res_sd[scaff].append(str(round(numpy.std(ind_scaff),2)))
+			
+		print scaff+" calculations complete"
 	
 	for scaff in completed:
 		outMean.write("%s\t%s\n"%(scaff,"\t".join(scaff_res_mean[scaff])))
