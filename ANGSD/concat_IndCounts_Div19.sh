@@ -29,7 +29,7 @@ then
 	cp All_HF_Scaffold_Indiv_Coverage_Stats_Int19_0.txt.ind.sd.txt All_HF_Scaffold_Indiv_Coverage_Stats_Int19.txt.ind.sd.txt
 	cp All_HF_Scaffold_Indiv_Coverage_Stats_Int19_0.txt.exclude.sites All_HF_Scaffold_Indiv_Coverage_Stats_Int19.txt.exclude.sites
 	
-	for i in {1..30}
+	for i in {1..31}
 		do	
 		cat All_HF_Scaffold_Indiv_Coverage_Stats_Int19_$i.txt.ind.mean.txt | tail -n +2 >> All_HF_Scaffold_Indiv_Coverage_Stats_Int19.txt.ind.mean.txt	
 		cat All_HF_Scaffold_Indiv_Coverage_Stats_Int19_$i.txt.ind.median.txt | tail -n +2 >> All_HF_Scaffold_Indiv_Coverage_Stats_Int19.txt.ind.median.txt	
