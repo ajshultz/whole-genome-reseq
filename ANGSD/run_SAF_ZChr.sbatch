@@ -4,7 +4,7 @@
 #SBATCH -n 8
 #SBATCH -N 1
 #SBATCH --mem 24000
-#SBATCH -t 1-0:00:00
+#SBATCH -t 0-8:00:00
 #SBATCH -J angsd_saf
 #SBATCH -o logs/angsd_saf_%j.out
 #SBATCH -e logs/angsd_saf_%j.err
@@ -26,4 +26,4 @@ ANC=$4
 
 angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -anc ${ANC} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -sites ${SITES} -only_proper_pairs 0 -nThreads 8 -out results_saf/${SAMPLES}_ZChr -doSaf 1 -GL 1 -skipTriallelic 1 -rf z_chr_cov_scaffs.angsdrf
 
-realSFS results_saf/${SAMPLES}_ZChr -P 8 > ${SAMPLES}_ZChr.sfs
+realSFS results_saf/${SAMPLES}_ZChr.saf.idx -P 8 > ${SAMPLES}_ZChr.sfs
