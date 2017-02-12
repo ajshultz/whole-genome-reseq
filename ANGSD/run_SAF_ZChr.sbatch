@@ -26,4 +26,4 @@ ANC=$4
 
 angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -anc ${ANC} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -sites ${SITES} -only_proper_pairs 0 -nThreads 8 -out results_saf/${SAMPLES}_ZChr -doSaf 1 -GL 1 -skipTriallelic 1 -rf z_chr_cov_scaffs.angsdrf
 
-realSFS results_saf/${SAMPLES}_ZChr.saf.idx -P 8 > ${SAMPLES}_ZChr.sfs
+realSFS results_saf/${SAMPLES}_ZChr.saf.idx -P 8 > results_saf/${SAMPLES}_ZChr.sfs
