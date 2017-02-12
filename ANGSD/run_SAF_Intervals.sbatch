@@ -4,7 +4,7 @@
 #SBATCH -n 8
 #SBATCH -N 1
 #SBATCH --mem 24000
-#SBATCH -t 1-0:00:00
+#SBATCH -t 0-8:00:00
 #SBATCH -J angsd_saf
 #SBATCH -o logs/angsd_saf_%A_%a.out
 #SBATCH -e logs/angsd_saf_%A_%a.err
@@ -25,4 +25,4 @@ ANC=$4
 
 angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -anc ${ANC} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -sites ${SITES} -only_proper_pairs 0 -nThreads 8 -out results_saf/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID} -doSaf 1 -GL 1 -skipTriallelic 1 -rf split_fai_20_angsd/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list
 
-realSFS results_saf/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID} -P 8 > ${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}.sfs
+realSFS results_saf/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}.saf.idx -P 8 > ${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}.sfs
