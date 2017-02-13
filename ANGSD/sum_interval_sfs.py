@@ -31,7 +31,6 @@ def main(argv):
 	new_sfs = []
 	
 	for i in range(1,21):
-		print i
 		int = open(directory+"/"+sampleName+"_Int"+str(i)+".sfs","r")
 		for line in int:
 			line = line.strip().split(" ")
