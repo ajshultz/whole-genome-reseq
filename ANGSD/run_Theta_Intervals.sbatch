@@ -18,12 +18,13 @@ REF=../genome/final.assembly.homo.fa
 SAMPLES=$1
 BAMLISTDIR=$2
 SITES=$3
+ANC=$4
 
 #Filters are only keep unique hits, remove "bad" reads, no trimming, (didn't use filter for reads where mates could be mapped), only keep reads with a minimum mapping quality of 20 only keep sites where there are data for at least half of the individuals. Minimum base quality of 20
 
 #Calculate theta for each site
 
-angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref $REF -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -sites ${SITES} -only_proper_pairs 0 -nThreads 12 -out results_theta/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID} -doCounts 1 -doMaf 1 -doMajorMinor 1 -GL 1 -doThetas 1 -doSaf 1 -pest results_saf/${SAMPLES}_Genome.sfs -rf split_fai_20_angsd/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list
+angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref $REF -anc ${ANC} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -sites ${SITES} -only_proper_pairs 0 -nThreads 12 -out results_theta/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID} -doCounts 1 -doMaf 1 -doMajorMinor 1 -GL 1 -doThetas 1 -doSaf 1 -pest results_saf/${SAMPLES}_Genome.sfs -rf split_fai_20_angsd/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list
 
 
 
