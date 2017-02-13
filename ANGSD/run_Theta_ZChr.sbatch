@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#SBATCH -p general
+#SBATCH -n 12
+#SBATCH -N 1
+#SBATCH --mem 24000
+#SBATCH -t 0-8:00:00
+#SBATCH -J angsd_theta
+#SBATCH -o logs/angsd_theta_%j.out
+#SBATCH -e logs/angsd_theta_%j.err
+#SBATCH --constraint=holyib
+
+module load angsd/0.911-fasrc01
+
+REF=../genome/final.assembly.homo.fa
+
+SAMPLES=$1
+BAMLISTDIR=$2
+SITES=$3
+
+#Filters are only keep unique hits, remove "bad" reads, no trimming, (didn't use filter for reads where mates could be mapped), only keep reads with a minimum mapping quality of 20 only keep sites where there are data for at least half of the individuals. Minimum base quality of 20
+
+#Calculate theta for each site
+
+angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref $REF -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -sites ${SITES} -only_proper_pairs 0 -nThreads 12 -out results_theta/${SAMPLES}_ZChr -doCounts 1 -doMaf 1 -doMajorMinor 1 -GL 1 -doThetas 1 -doSaf 1 -pest results_saf/${SAMPLES}_Genome.sfs -rf z_chr_cov_scaffs.angsdrf
+
+
+
+#3) Estimate Tajima's D and other statistics for each site
+thetaStat make_bed results_theta/${SAMPLES}_ZChr.thetas.gz
+thetaStat do_stat results_theta/${SAMPLES}_ZChr.thetas.gz
