@@ -19,7 +19,6 @@ SAMPLES=$1
 BAMLISTDIR=$2
 SITES=$3
 NIND=$4
-NSITES=$5
 
 
 #Filters are only keep unique hits, remove "bad" reads, no trimming, (didn't use filter for reads where mates could be mapped), only keep reads with a minimum mapping quality of 20 only keep sites where there are data for at least half of the individuals. Minimum base quality of 20
@@ -29,10 +28,10 @@ NSITES=$5
 #gunzip results_pca/${SAMPLES}.geno.gz
 
 #For some reason this is giving me a permission denied error, so I am running on its own and feeding as a command.
-#N_SITES=zcat results_pca/${SAMPLES}.mafs.gz | tail -n+2 | wc -l
-#echo $N_SITES
+N_SITES=$(zcat results_pca/${SAMPLES}.mafs.gz | tail -n+2 | wc -l)
+echo $N_SITES
 
 #Have to reload ngsTools
 module load ngsTools/0.615-fasrc01
 
-ngsCovar -probfile results_pca/${SAMPLES}.geno -outfile results_pca/${SAMPLES}.covar -nind ${NIND} -nsites ${NSITES}
+ngsCovar -probfile results_pca/${SAMPLES}.geno -outfile results_pca/${SAMPLES}.covar -nind ${NIND} -nsites ${NSITES} -minmaf 0.05
