@@ -21,4 +21,4 @@ INTERVAL=$4
 
 #Use SamTools model for GL calculation, infer major/minor based on GL, calculate Likelhood Ratio Tests comparing samples from different time points.
 
-angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref ${REF} -out results_LRTInt_Asso1_GL1/${SAMPLES}_${SLURM_ARRAY_TASK_ID} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -only_proper_pairs 0 -minQ 20 -sites ${SITES} -doMaf 2 -doMajorMinor 1 -GL 1 -nThreads 6 -ybin ${BAMLISTDIR}/${SAMPLES}_yBin.txt -doAsso 1 -SNP_pval 1e-6 -minMaf 0.10 -doPost 1 -rf split_fai_20_angsd/final.assembly.homo.fa_${INTERVAL}.interval_list 
+angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref ${REF} -out results_LRTInt_Asso1_GL1/${SAMPLES}_${INTERVAL} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -only_proper_pairs 0 -minQ 20 -sites ${SITES} -doMaf 2 -doMajorMinor 1 -GL 1 -nThreads 6 -ybin ${BAMLISTDIR}/${SAMPLES}_yBin.txt -doAsso 1 -SNP_pval 1e-6 -minMaf 0.10 -doPost 1 -rf split_fai_20_angsd/final.assembly.homo.fa_${INTERVAL}.interval_list 
