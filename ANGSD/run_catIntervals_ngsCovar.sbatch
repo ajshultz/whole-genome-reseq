@@ -4,7 +4,7 @@
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem 12000
-#SBATCH -t 0-3:00:00
+#SBATCH -t 0-6:00:00
 #SBATCH -J angsd_pca
 #SBATCH -o logs/angsd_pca_%j.out
 #SBATCH -e logs/angsd_pca_%j.err
