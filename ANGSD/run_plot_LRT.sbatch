@@ -17,6 +17,6 @@ DIRECTORY=$2
 
 gunzip ${DIRECTORY}/${SAMPLES}_cat.lrt0.gz
 
-Rscript --vanilla ../whole-genome-reseq/ANGSD/manhattanFromLRT_Cluster.R --args ${SAMPLES} ${DIRECTORY} >  ${DIRECTORY}/${SAMPLES}.Rout 
+Rscript --vanilla ../whole-genome-reseq/ANGSD/manhattanFromLRT_Cluster.R ${SAMPLES} ${DIRECTORY} >  ${DIRECTORY}/${SAMPLES}.Rout 
 
 gzip ${DIRECTORY}/${SAMPLES}_cat.lrt0
