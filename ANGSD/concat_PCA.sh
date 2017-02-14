@@ -10,12 +10,12 @@ for i in {1..${INTERVALS}}
 
 do
 
-if [ -f ./${SAMPLE}_$i.mafs.gz ]
+if [ -f ./${SAMPLE}_Int$i.mafs.gz ]
 then
 COUNT=$(($COUNT+1))
 
 else
-echo ${SAMPLE}_$i missing file
+echo ${SAMPLE}_Int$i missing file
 fi
 
 done
@@ -25,15 +25,15 @@ done
 if [ "$COUNT" -eq ${INTERVALS} ]
 
 then	
-	cp ${SAMPLE}_1.mafs.gz ${SAMPLE}_cat.mafs.gz
+	cp ${SAMPLE}_Int1.mafs.gz ${SAMPLE}_cat.mafs.gz
 	gunzip ${SAMPLE}_cat.mafs.gz
 	
-	cp ${SAMPLE}_1.geno ${SAMPLE}_cat.geno
+	cp ${SAMPLE}_Int1.geno ${SAMPLE}_cat.geno
 	
 	for i in {2..${INTERVALS}}
 		do	
-		zcat ${SAMPLE}_$i.mafs.gz | tail -n +2 >> ${SAMPLE}_cat.mafs
-		cat ${SAMPLE}_$i.geno >> ${SAMPLE}_cat.geno
+		zcat ${SAMPLE}_Int$i.mafs.gz | tail -n +2 >> ${SAMPLE}_cat.mafs
+		cat ${SAMPLE}_Int$i.geno >> ${SAMPLE}_cat.geno
 		done
 	
 	gzip  ${SAMPLE}_cat.mafs
