@@ -28,9 +28,9 @@ then
 	
 	zcat ${DIRECTORY}/${SAMPLE}_Int$i.thetas.gz| head -n 1 > ${DIRECTORY}/${SAMPLE}_Rand.thetas
 	
-	for i in {1..2}
+	for i in {1..20}
 		do	
-		zcat ${DIRECTORY}/${SAMPLE}_Int$i.thetas.gz | shuf -n 100 >> ${DIRECTORY}/${SAMPLE}_Rand.thetas	
+		zcat ${DIRECTORY}/${SAMPLE}_Int$i.thetas.gz | shuf -n 10000 >> ${DIRECTORY}/${SAMPLE}_Rand.thetas	
 		done
 
 else
