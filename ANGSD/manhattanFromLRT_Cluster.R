@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-args <- commandArgs(trailingOnly=TRUE)
+args <- commandArgs(TRUE)
 
 samples <- args[1]
 dir <- args[2]

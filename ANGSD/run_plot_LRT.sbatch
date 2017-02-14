@@ -17,6 +17,6 @@ DIRECTORY=$2
 
 gunzip ${DIRECTORY}/${SAMPLES}_cat.lrt0.gz
 
-R CMD BATCH --quiet --no-restore --no-save ../whole-genome-reseq/ANGSD/manhattanFromLRT_Cluster.R ${SAMPLES} ${DIRECTORY}
+R CMD BATCH --quiet --no-restore --no-save '--args ${SAMPLES} ${DIRECTORY}' ../whole-genome-reseq/ANGSD/manhattanFromLRT_Cluster.R ${DIRECTORY}/${SAMPLES}.Rout 
 
 gzip ${DIRECTORY}/${SAMPLES}_cat.lrt0
