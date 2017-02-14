@@ -2,6 +2,7 @@
 
 SAMPLE=$1
 INTERVALS=$2
+DIRECTORY=$3
 
 COUNT=0
 
@@ -9,7 +10,7 @@ COUNT=0
 for i in $(seq 1 ${INTERVALS})
 
 do
-if [ -f ./${SAMPLE}_Int$i.mafs.gz ]
+if [ -f ${DIRECTORY}/${SAMPLE}_Int$i.mafs.gz ]
 then
 COUNT=$(($COUNT+1))
 
@@ -24,18 +25,18 @@ done
 if [ "$COUNT" -eq ${INTERVALS} ]
 
 then	
-	cp ${SAMPLE}_Int1.mafs.gz ${SAMPLE}_cat.mafs.gz
-	gunzip ${SAMPLE}_cat.mafs.gz
+	cp ${DIRECTORY}/${SAMPLE}_Int1.mafs.gz ${DIRECTORY}/${SAMPLE}_cat.mafs.gz
+	gunzip ${DIRECTORY}/${SAMPLE}_cat.mafs.gz
 	
-	cp ${SAMPLE}_Int1.geno ${SAMPLE}_cat.geno
+	cp ${DIRECTORY}/${SAMPLE}_Int1.geno ${DIRECTORY}/${SAMPLE}_cat.geno
 	
 	for i in $(seq 2 ${INTERVALS})
 		do	
-		zcat ${SAMPLE}_Int$i.mafs.gz | tail -n +2 >> ${SAMPLE}_cat.mafs
-		cat ${SAMPLE}_Int$i.geno >> ${SAMPLE}_cat.geno
+		zcat ${DIRECTORY}/${SAMPLE}_Int$i.mafs.gz | tail -n +2 >> ${DIRECTORY}/${SAMPLE}_cat.mafs
+		cat ${DIRECTORY}/${SAMPLE}_Int$i.geno >> ${DIRECTORY}/${SAMPLE}_cat.geno
 		done
 	
-	gzip  ${SAMPLE}_cat.mafs
+	gzip  ${DIRECTORY}/${SAMPLE}_cat.mafs
 
 else
 	echo Something is wrong
