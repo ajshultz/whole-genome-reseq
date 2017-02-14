@@ -3,8 +3,8 @@
 #SBATCH -p serial_requeue
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --mem 1000
-#SBATCH -t 0-0:10:00
+#SBATCH --mem 24000
+#SBATCH -t 0-5:00:00
 #SBATCH -J angsd_lrt_plot
 #SBATCH -o logs/angsd_lrt_plot_%j.out
 #SBATCH -e logs/angsd_lrt_plot_%j.err
