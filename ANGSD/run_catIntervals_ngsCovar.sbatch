@@ -22,4 +22,4 @@ sh /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/ANGSD/concat
 N_SITES=$(zcat results_pca/${SAMPLES}.mafs.gz | tail -n+2 | wc -l)
 echo $N_SITES
 
-ngsCovar -probfile results_pca/${SAMPLES}_cat.geno -outfile results_pca/${SAMPLES}.covar -nind ${NIND} -nsites $N_SITES -minmaf 0.05
+ngsCovar -probfile results_pca/${SAMPLES}_cat.geno -outfile results_pca/${SAMPLES}.covar -nind ${NIND} -minmaf 0.05 -nsites $N_SITES
