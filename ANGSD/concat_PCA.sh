@@ -6,10 +6,10 @@ INTERVALS=$2
 COUNT=0
 
 #Check if all files are present
-for i in {1..${INTERVALS}}
+for i in $(seq 1 ${INTERVALS})
 
 do
-
+echo $i
 if [ -f ./${SAMPLE}_Int$i.mafs.gz ]
 then
 COUNT=$(($COUNT+1))
