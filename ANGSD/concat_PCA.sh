@@ -30,7 +30,7 @@ then
 	
 	cp ${SAMPLE}_Int1.geno ${SAMPLE}_cat.geno
 	
-	for i in {2..${INTERVALS}}
+	for i in $(seq 2 ${INTERVALS})
 		do	
 		zcat ${SAMPLE}_Int$i.mafs.gz | tail -n +2 >> ${SAMPLE}_cat.mafs
 		cat ${SAMPLE}_Int$i.geno >> ${SAMPLE}_cat.geno
