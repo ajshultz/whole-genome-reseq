@@ -10,7 +10,7 @@ for i in {1..${INTERVALS}}
 
 do
 
-if [ -f ./${SAMPLE}_$i.lrt0.gz ]
+if [ -f ./${SAMPLE}_$i.mafs.gz ]
 then
 COUNT=$(($COUNT+1))
 
