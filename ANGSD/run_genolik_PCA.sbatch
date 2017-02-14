@@ -27,7 +27,7 @@ angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref $REF -uniqueOnly 1 -remove_
 
 gunzip results_pca/${SAMPLES}.geno.gz
 
-N_SITES= zcat results_pca/${SAMPLES}.mafs.gz | tail -n+2 | wc -l
+N_SITES=$(zcat results_pca/${SAMPLES}.mafs.gz | tail -n+2 | wc -l)
 echo $N_SITES
 
 #Have to reload ngsTools
