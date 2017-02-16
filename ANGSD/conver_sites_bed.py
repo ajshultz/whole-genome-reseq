@@ -30,10 +30,10 @@ def main(argv):
 	output = open(outputFile,"w")
 	
 	for line in input:
-		line = line.strip().split("t")
+		line = line.strip().split("\t")
 		line[1] = str(int(line[1])-1)
-		newline = "/t".join(line)
-		write.output(line+"\n")
+		newline = "\t".join(line)
+		output.write(newline+"\n")
 	
 	
 	input.close()
