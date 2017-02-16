@@ -97,7 +97,7 @@ def main(argv):
 					for i in range(0,len(ind_order)):
 						ind_res_scaffDict[ind_order[i]][scaff].append(int(counts[i]))
 			else:
-				exclude.write(scaff+"\t"+bp+"\t"+bp+"\n")
+				exclude.write(scaff+"\t"+str(int(bp)-1)+"\t"+bp+"\n")
 		else:
 			for ind in counts:
 				ind_res[ind] = []
