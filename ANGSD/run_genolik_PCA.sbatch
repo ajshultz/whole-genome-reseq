@@ -33,4 +33,4 @@ echo $N_SITES
 #Have to reload ngsTools
 module load ngsTools/0.615-fasrc01
 
-ngsCovar -probfile results_pca/${SAMPLES}.geno -outfile results_pca/${SAMPLES}.covar -nind ${NIND} -nsites $N_SITES -call 0 -norm 0
+ngsCovar -probfile results_pca/${SAMPLES}.geno -outfile results_pca/${SAMPLES}.covar -nind ${NIND} -call 0 -norm 0 -minmaf 0.05 -nsites $N_SITES
