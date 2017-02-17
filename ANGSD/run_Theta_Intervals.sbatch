@@ -9,7 +9,7 @@
 #SBATCH -o logs/angsd_theta_%A_%a.out
 #SBATCH -e logs/angsd_theta_%A_%a.err
 #SBATCH --constraint=holyib
-#SBATCH --array=1-20
+#SBATCH --array=15-20
 
 module load angsd/0.911-fasrc01
 
