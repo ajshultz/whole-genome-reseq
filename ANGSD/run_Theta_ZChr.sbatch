@@ -23,12 +23,12 @@ ANC=$4
 
 #Calculate theta for each site
 
-angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref $REF -anc ${ANC} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -sites ${SITES} -only_proper_pairs 0 -nThreads 12 -out results_theta/${SAMPLES}_ZChr -doCounts 1 -doMaf 1 -doMajorMinor 1 -GL 1 -doThetas 1 -doSaf 1 -pest results_saf/${SAMPLES}_Genome.sfs -rf z_chr_cov_scaffs.angsdrf
+angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref $REF -anc ${ANC} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -sites ${SITES} -only_proper_pairs 0 -nThreads 12 -out results_theta_cov1.7/${SAMPLES}_ZChr -doCounts 1 -doMaf 1 -doMajorMinor 1 -GL 1 -doThetas 1 -doSaf 1 -pest results_saf/${SAMPLES}_Genome.sfs -rf z_chr_cov_scaffs.angsdrf
 
-N_CHR=$(zcat results_theta/${SAMPLES}_ZChr.thetas.gz | tail -n+2 | cut -s -f 1 | uniq | wc -l)
+N_CHR=$(zcat results_theta_cov1.7/${SAMPLES}_ZChr.thetas.gz | tail -n+2 | cut -s -f 1 | uniq | wc -l)
 echo $N_CHR
 
 #3) Estimate Tajima's D and other statistics for each site
-thetaStat make_bed results_theta/${SAMPLES}_ZChr.thetas.gz
-thetaStat do_stat results_theta/${SAMPLES}_ZChr.thetas.gz -win 1000 -step 1000 -nChr ${N_CHR} -outnames results_theta/${SAMPLES}_ZChr_1kbWin_1kbStep
-thetaStat do_stat results_theta/${SAMPLES}_ZChr.thetas.gz -win 2500 -step 500 -nChr ${N_CHR} -outnames results_theta/${SAMPLES}_ZChr_2.5kbWin_.5kbStep
+thetaStat make_bed results_theta_cov1.7/${SAMPLES}_ZChr.thetas.gz
+thetaStat do_stat results_theta_cov1.7/${SAMPLES}_ZChr.thetas.gz -win 1000 -step 1000 -nChr ${N_CHR} -outnames results_theta_cov1.7/${SAMPLES}_ZChr_1kbWin_1kbStep
+thetaStat do_stat results_theta_cov1.7/${SAMPLES}_ZChr.thetas.gz -win 2500 -step 500 -nChr ${N_CHR} -outnames results_theta_cov1.7/${SAMPLES}_ZChr_2.5kbWin_.5kbStep
