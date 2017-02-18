@@ -4,15 +4,28 @@ args <- commandArgs(TRUE)
 
 samples <- args[1]
 dir <- args[2]
+sites <- args[3]
 
 e9001res <- read.table(paste(dir,"/",samples,"_cat.lrt0",sep=""),header=T)
 
+e9001res$Scaffold <- apply(e9001res,1,function(x) as.numeric(unlist(strsplit(as.character(x["Chromosome"]),"_"))[2]))
+e9001res$Scaffold_BP <- paste(e9001res$Chromosome,e9001res$Position,sep="_")
+
+if (length(args)>2){
+	ex_sites <- read.table(sites,sep="\t",header=F)
+	ex_sites$chr_pos <- paste(ex_sites[,1],ex_sites[,3],sep="_")
+	
+	e9001res <- e9001res[!(e9001res$Scaffold_BP %in% ex_sites$chr_pos),]
+}
+
+
+
+#Calculate p-val and FDR p-val
 e9001res$Pval <- apply(e9001res,1,function(x) 1-pchisq(as.numeric(x["LRT"]),1))
 e9001res$Pval.adj <- p.adjust(e9001res$Pval)
-e9001res$Scaffold <- apply(e9001res,1,function(x) as.numeric(unlist(strsplit(as.character(x["Chromosome"]),"_"))[2]))
-write.csv(e9001res,file=paste(dir,"/",samples,".Asso1GL1.LRTPvals.csv",sep=""))
 
-e9001res$Scaffold_BP <- paste(e9001res$Chromosome,e9001res$Position,sep="_")
+
+write.csv(e9001res,file=paste(dir,"/",samples,".Asso1GL1.LRTPvals.csv",sep=""))
 
 save(e9001res,file=paste(dir,"/",samples,".Asso1GL1.LRTPvals.Rdat",sep=""))
 

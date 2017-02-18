@@ -14,9 +14,10 @@ module load R
 
 SAMPLES=$1
 DIRECTORY=$2
+SITES=$3
 
 gunzip ${DIRECTORY}/${SAMPLES}_cat.lrt0.gz
 
-Rscript --vanilla ../whole-genome-reseq/ANGSD/manhattanFromLRT_Cluster.R ${SAMPLES} ${DIRECTORY} >  ${DIRECTORY}/${SAMPLES}.Rout 
+Rscript --vanilla ../whole-genome-reseq/ANGSD/manhattanFromLRT_Cluster.R ${SAMPLES} ${DIRECTORY} ${SITES} >  ${DIRECTORY}/${SAMPLES}.Rout 
 
 gzip ${DIRECTORY}/${SAMPLES}_cat.lrt0
