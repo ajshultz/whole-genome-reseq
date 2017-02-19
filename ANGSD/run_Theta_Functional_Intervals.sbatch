@@ -33,4 +33,4 @@ echo $N_CHR
 #3) Estimate Tajima's D and other statistics for each site
 thetaStat make_bed results_theta_functional/${SAMPLES}_${FUNCTION}_Int${SLURM_ARRAY_TASK_ID}.thetas.gz
 thetaStat do_stat results_theta_functional/${SAMPLES}_${FUNCTION}_Int${SLURM_ARRAY_TASK_ID}.thetas.gz -win 1000 -step 1000 -nChr ${N_CHR} -outnames results_theta_functional/${SAMPLES}_${FUNCTION}_Int${SLURM_ARRAY_TASK_ID}_1kbWin_1kbStep
-thetaStat do_stat results_theta_functional/${SAMPLES_${FUNCTION}}_Int${SLURM_ARRAY_TASK_ID}.thetas.gz -win 2500 -step 500 -nChr ${N_CHR} -outnames results_theta_functional/${SAMPLES}_${FUNCTION}_Int${SLURM_ARRAY_TASK_ID}_2.5kbWin_.5kbStep
+thetaStat do_stat results_theta_functional/${SAMPLES}_${FUNCTION}_Int${SLURM_ARRAY_TASK_ID}.thetas.gz -win 2500 -step 500 -nChr ${N_CHR} -outnames results_theta_functional/${SAMPLES}_${FUNCTION}_Int${SLURM_ARRAY_TASK_ID}_2.5kbWin_.5kbStep
