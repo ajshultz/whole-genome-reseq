@@ -3,8 +3,8 @@
 #SBATCH -p general
 #SBATCH -n 12
 #SBATCH -N 1
-#SBATCH --mem 30000
-#SBATCH -t 1-0:00:00
+#SBATCH --mem 56000
+#SBATCH -t 1-8:00:00
 #SBATCH -J angsd_theta
 #SBATCH -o logs/angsd_theta_%j.out
 #SBATCH -e logs/angsd_theta_%j.err
