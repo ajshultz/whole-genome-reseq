@@ -108,11 +108,11 @@ if (line==TRUE) abline(h=t1,lty=1,col="black",lwd=1)
 
 
 png(file=paste(dir,"/",samples,".Asso1GL1_pvals_manhattan.png",sep=""),height=3,width=8,units="in",res=300)
-manhattan(chr=e9001res$Scaffold,bp=e9001res$Position,value=e9001res$Pval,chrlengths=scafflen,title="90 vs 01",plotnames=names(scafflen),ylab="-log p-value",t1=-log10(bonferroni),maxp=-log10(maxp),logneg=TRUE,highlight=FALSE,line=TRUE)
+manhattan(chr=e9001res$Scaffold,bp=e9001res$Position,value=e9001res$Pval,chrlengths=scafflen,title=samples,plotnames=names(scafflen),ylab="-log p-value",t1=-log10(bonferroni),maxp=-log10(0.0000000000000001),logneg=TRUE,highlight=FALSE,line=TRUE)
 dev.off()
 
 png(file=paste(dir,"/",samples,".Asso1GL1_fdr_manhattan.png",sep=""),height=3,width=8,units="in",res=300)
-manhattan(chr=e9001res$Scaffold,bp=e9001res$Position,value=e9001res$Pval.adj,chrlengths=scafflen,title="90 vs 01",plotnames=names(scafflen),ylab="-log p-value",t1=-log10(0.05),maxp=-log10(maxfdrp),logneg=TRUE,highlight=FALSE,line=FALSE)
+manhattan(chr=e9001res$Scaffold,bp=e9001res$Position,value=e9001res$Pval.adj,chrlengths=scafflen,title=samples,plotnames=names(scafflen),ylab="-log p-value",t1=-log10(0.05),maxp=-log10(maxfdrp),logneg=TRUE,highlight=FALSE,line=FALSE)
 dev.off()
 
 
