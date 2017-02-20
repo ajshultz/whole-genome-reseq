@@ -31,8 +31,8 @@ then
 	
 	for i in {1..20}
 		do	
-		cat ${DIRECTORY}/${SAMPLE}_Int$i_1kbWin_1kbStep.pestPG | tail -n +2 >> ${DIRECTORY}/${SAMPLE}_cat_1kbWin_1kbStep.pestPG	
-		#zcat ${DIRECTORY}/${SAMPLE}_Int$i.thetas.gz | tail -n +2 >> ${DIRECTORY}/${SAMPLE}_cat.thetas.gz
+		cat ${DIRECTORY}/${SAMPLE}_Int${i}_1kbWin_1kbStep.pestPG | tail -n +2 >> ${DIRECTORY}/${SAMPLE}_cat_1kbWin_1kbStep.pestPG	
+		#zcat ${DIRECTORY}/${SAMPLE}_Int${i}.thetas.gz | tail -n +2 >> ${DIRECTORY}/${SAMPLE}_cat.thetas.gz
 		done
 
 else
