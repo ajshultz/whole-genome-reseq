@@ -4,35 +4,38 @@ import re, sys, os, itertools, sets, getopt        # Load standard modules I oft
 import numpy, gzip
 
 '''
-Takes a directory (-f, <default .>) and cycles through sfs results to sum across 20 intervals. Set up to work with a specific sample name (-s <sample name> as sample_genome.sfs. 
+Takes a directory (-f, <default .>) and cycles through sfs results to sum across -n <default 20> intervals. Set up to work with a specific sample name (-s <sample name> as sample_genome.sfs. 
 '''
 
 def main(argv):
 	try:
-		opts,args = getopt.getopt(argv,'hd:s:')
+		opts,args = getopt.getopt(argv,'hd:s:n:')
 	except getopt.GetOptError:
-		print "sum_interval_sfs.py -d <directory> -s <sample name>"
+		print "sum_interval_sfs.py -d <directory> -s <sample name> -n <number of intervals default 20>"
 		sys.exit(2)
 			
 	directory = "."
 	sampleName=""
+	nintervals = 20
 
 	for opt, arg in opts:
 		if opt == "-h":
-			print "sum_interval_sfs.py -d <directory> -s <sample name>"
+			print "sum_interval_sfs.py -d <directory> -s <sample name> -n <number of intervals default 20>"
 			sys.exit(2)
 		elif opt == "-d":
 			directory = arg
 		elif opt == "-s":
 			sampleName = arg
+		elif opt == "-n":
+			nintervals = int(arg)
 
 	output = open(directory+"/"+sampleName+"_Genome.sfs","w")
 	
 	new_sfs = []
 	
-	for i in range(1,21):
-		int = open(directory+"/"+sampleName+"_Int"+str(i)+".sfs","r")
-		for line in int:
+	for i in range(1,(nintervals+1)):
+		interval = open(directory+"/"+sampleName+"_Int"+str(i)+".sfs","r")
+		for line in interval:
 			line = line.strip().split(" ")
 			if i == 1:
 				for j in range(0,len(line)):
@@ -40,7 +43,7 @@ def main(argv):
 			else:
 				for j in range(0,len(line)):
 					new_sfs[j].append(float(line[j]))
-		int.close()
+		interval.close()
 	
 	new_sfs_summed = []
 	for bin in new_sfs:
