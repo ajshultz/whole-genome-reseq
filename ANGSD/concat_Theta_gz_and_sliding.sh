@@ -27,7 +27,7 @@ if [ "$COUNT" -eq "20" ]
 then	
 	
 	#zcat ${DIRECTORY}/${SAMPLE}_Int1.thetas.gz > ${DIRECTORY}/${SAMPLE}_cat.thetas
-	cp ${DIRECTORY}/${SAMPLE}_Int1_1kbWin_1kbStep.pestPG > ${DIRECTORY}/${SAMPLE}_cat_1kbWin_1kbStep.pestPG
+	cp ${DIRECTORY}/${SAMPLE}_Int1_1kbWin_1kbStep.pestPG ${DIRECTORY}/${SAMPLE}_cat_1kbWin_1kbStep.pestPG
 	
 	for i in {1..20}
 		do	
