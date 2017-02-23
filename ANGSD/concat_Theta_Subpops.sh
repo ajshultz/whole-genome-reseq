@@ -6,6 +6,6 @@ NINT=20
 
 for i in ${NAMES[@]}
 do
-../whole-genome-reseq/ANGSD/concat_Theta_gz_and_sliding_int1.10.sh ${NAMES} results_theta_subpops
-../whole-genome-reseq/ANGSD/concat_Theta_gz_and_sliding.sh ${NAMES} results_theta_subpops
+../whole-genome-reseq/ANGSD/concat_Theta_gz_and_sliding_int1.10.sh ${i} results_theta_subpops
+../whole-genome-reseq/ANGSD/concat_Theta_gz_and_sliding.sh ${i} results_theta_subpops
 done
