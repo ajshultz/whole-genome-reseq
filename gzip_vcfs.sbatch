@@ -11,7 +11,8 @@
 
 DIR=$1
 
-for i in $(ls ${DIR);do
+
+for i in $(ls ${DIR});do
     if [[ $i =~ .*\.vcf$ ]];
     	then
       	gzip $i
