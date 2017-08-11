@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH -p general
-#SBATCH -n 1
+#SBATCH -n 2
 #SBATCH -N 1
 #SBATCH --mem 12000
 #SBATCH -t 1-00:00
@@ -14,7 +14,7 @@ SAMPLE=$1
 
 module load java/1.8.0_45-fasrc01
 
-java -Xmx8g -jar ~/sw/bin/GenomeAnalysisTK.jar \
+java -Xmx8g -XX:ParallelGCThreads=1 -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -T IndelRealigner \
 -R ../genome/final.assembly.homo.fa \
 -I ../preprocess/${SAMPLE}.dedup.sorted.bam \

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH -p general
-#SBATCH -n 1
+#SBATCH -n 2
 #SBATCH -N 1
 #SBATCH --mem 24000
 #SBATCH -t 7-00:00
@@ -11,7 +11,7 @@
 
 module load java/1.8.0_45-fasrc01
 
-java -Xmx16g -jar ~/sw/bin/GenomeAnalysisTK.jar \
+java -Xmx16g -XX:ParallelGCThreads=1 -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -T RealignerTargetCreator \
 -R final.assembly.homo.fa \
 -I ME_90_01.dedup.sorted.bam \

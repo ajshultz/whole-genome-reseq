@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH -p general
-#SBATCH -n 1
+#SBATCH -n 2
 #SBATCH -N 1
 #SBATCH --mem 16000
 #SBATCH -t 1-00:00
@@ -17,7 +17,7 @@ for i in {1..20};
 
 do
 
-java -Xmx8g -jar ~/sw/bin/GenomeAnalysisTK.jar \
+java -Xmx8g -XX:ParallelGCThreads=1 -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -T IndelRealigner \
 -R ../genome/final.assembly.homo.fa \
 -I ../preprocess/${SAMPLE}.dedup.sorted.bam \
