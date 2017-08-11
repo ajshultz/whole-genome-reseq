@@ -1,0 +1,20 @@
+#!/bin/bash
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CC_01
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CC_02
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CC_03
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CC_04
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CC_05
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CC_06
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CC_08
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CC_07
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CP_01
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CP_02
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CP_03
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CP_04
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CP_05
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CP_06
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CP_07
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CP_08
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch PinEnu
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch UraSib
+sbatch /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PreProcessing/03_run_SortIndexSummary.sbatch CarEry
