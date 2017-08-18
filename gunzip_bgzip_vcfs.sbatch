@@ -9,6 +9,7 @@
 #SBATCH -o ../logs/gzip_vcfs_%j.out
 #SBATCH -e ../logs/gzip_vcfs_%j.err
 
+module load tabix
 
 for i in $(ls);
   do
