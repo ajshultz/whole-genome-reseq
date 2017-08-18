@@ -18,14 +18,14 @@ SAMPLE=$1
 java -Xmx6g -XX:ParallelGCThreads=1 -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -T GenotypeGVCFs \
 -R ../genome/final.assembly.homo.fa \
---variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_01_${SLURM_ARRAY_TASK_ID}.raw.g.vcf \
---variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_02_${SLURM_ARRAY_TASK_ID}.raw.g.vcf \
---variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_03_${SLURM_ARRAY_TASK_ID}.raw.g.vcf \
---variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_04_${SLURM_ARRAY_TASK_ID}.raw.g.vcf \
---variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_05_${SLURM_ARRAY_TASK_ID}.raw.g.vcf \
---variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_06_${SLURM_ARRAY_TASK_ID}.raw.g.vcf \
---variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_07_${SLURM_ARRAY_TASK_ID}.raw.g.vcf \
---variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_08_${SLURM_ARRAY_TASK_ID}.raw.g.vcf \
+--variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_01_${SLURM_ARRAY_TASK_ID}.raw.g.vcf.gz \
+--variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_02_${SLURM_ARRAY_TASK_ID}.raw.g.vcf.gz \
+--variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_03_${SLURM_ARRAY_TASK_ID}.raw.g.vcf.gz \
+--variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_04_${SLURM_ARRAY_TASK_ID}.raw.g.vcf.gz \
+--variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_05_${SLURM_ARRAY_TASK_ID}.raw.g.vcf.gz \
+--variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_06_${SLURM_ARRAY_TASK_ID}.raw.g.vcf.gz \
+--variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_07_${SLURM_ARRAY_TASK_ID}.raw.g.vcf.gz \
+--variant interval_list_${SLURM_ARRAY_TASK_ID}/CP_08_${SLURM_ARRAY_TASK_ID}.raw.g.vcf.gz \
 --heterozygosity 0.005 \
 -o genotype_res/All_CPs_Int${SLURM_ARRAY_TASK_ID}.vcf \
 -L split_fai_10/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list
