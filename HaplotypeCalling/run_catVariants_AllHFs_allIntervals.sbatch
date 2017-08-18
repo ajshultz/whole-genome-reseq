@@ -14,16 +14,16 @@ module load java/1.8.0_45-fasrc01
 
 
 java -Xmx10g -XX:ParallelGCThreads=1 -cp ~/sw/bin/GenomeAnalysisTK.jar org.broadinstitute.gatk.tools.CatVariants \
--R ../genome/final.assembly.homo.fa \
--V genotype_res/All_HFs_Int1.vcf.gz \
--V genotype_res/All_HFs_Int2.vcf.gz \
--V genotype_res/All_HFs_Int3.vcf.gz \
--V genotype_res/All_HFs_Int4.vcf.gz \
--V genotype_res/All_HFs_Int5.vcf.gz \
--V genotype_res/All_HFs_Int6.vcf.gz \
--V genotype_res/All_HFs_Int7.vcf.gz \
--V genotype_res/All_HFs_Int8.vcf.gz \
--V genotype_res/All_HFs_Int9.vcf.gz \
--V genotype_res/All_HFs_Int10.vcf.gz \
--o genotype_res/All_HFs_Combined.vcf \
+--reference ../genome/final.assembly.homo.fa \
+--variant genotype_res/All_HFs_Int1.vcf.gz \
+--variant genotype_res/All_HFs_Int2.vcf.gz \
+--variant genotype_res/All_HFs_Int3.vcf.gz \
+--variant genotype_res/All_HFs_Int4.vcf.gz \
+--variant genotype_res/All_HFs_Int5.vcf.gz \
+--variant genotype_res/All_HFs_Int6.vcf.gz \
+--variant genotype_res/All_HFs_Int7.vcf.gz \
+--variant genotype_res/All_HFs_Int8.vcf.gz \
+--variant genotype_res/All_HFs_Int9.vcf.gz \
+--variant genotype_res/All_HFs_Int10.vcf.gz \
+--output genotype_res/All_HFs_Combined.vcf \
 --assumeSorted
