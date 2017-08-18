@@ -27,5 +27,5 @@ java -Xmx6g -XX:ParallelGCThreads=1 -jar ~/sw/bin/GenomeAnalysisTK.jar \
 --variant interval_list_${SLURM_ARRAY_TASK_ID}/CC_07_${SLURM_ARRAY_TASK_ID}.raw.g.vcf.gz \
 --variant interval_list_${SLURM_ARRAY_TASK_ID}/CC_08_${SLURM_ARRAY_TASK_ID}.raw.g.vcf.gz \
 --heterozygosity 0.005 \
--o genotype_res/All_CCs_Int${SLURM_ARRAY_TASK_ID}.vcf \
+-o genotype_res/All_CCs_Int${SLURM_ARRAY_TASK_ID}.vcf.gz \
 -L split_fai_10/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list
