@@ -13,7 +13,7 @@
 module load java/1.8.0_45-fasrc01
 
 
-java -cp GenomeAnalysisTK.jar org.broadinstitute.gatk.tools.CatVariants \
+java -Xmx10g -XX:ParallelGCThreads=1 -cp ~/sw/bin/GenomeAnalysisTK.jar org.broadinstitute.gatk.tools.CatVariants \
 -R ../genome/final.assembly.homo.fa \
 -V genotype_res/All_HFs_Int1.vcf.gz \
 -V genotype_res/All_HFs_Int2.vcf.gz \
