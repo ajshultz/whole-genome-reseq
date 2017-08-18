@@ -12,5 +12,4 @@
 
 module load blast
 
-blastp -db  makeblastdb -in maker_protevi_othersp.fa -input_type fasta -dbtype prot
- -query HF.genome.all.maker.proteins.fasta -out HF_blast_Amniotes.blastp -evalue 0.000001 -outfmt 6 -num_alignments 1 -seg yes -soft_masking true -lcase_masking -max_hsps 1
+blastp -db maker_protevi_othersp.fa -input_type fasta -dbtype prot -query HF.genome.all.maker.proteins.fasta -out HF_blast_Amniotes.blastp -evalue 0.000001 -outfmt 6 -num_alignments 1 -seg yes -soft_masking true -lcase_masking -max_hsps 1
