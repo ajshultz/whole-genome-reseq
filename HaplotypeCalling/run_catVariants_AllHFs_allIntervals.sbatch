@@ -25,5 +25,5 @@ java -Xmx10g -XX:ParallelGCThreads=1 -cp ~/sw/bin/GenomeAnalysisTK.jar org.broad
 --variant genotype_res/All_HFs_Int8.vcf.gz \
 --variant genotype_res/All_HFs_Int9.vcf.gz \
 --variant genotype_res/All_HFs_Int10.vcf.gz \
---output genotype_res/All_HFs_Combined.vcf \
+--output genotype_res/All_HFs_Combined.vcf.gz \
 --assumeSorted
