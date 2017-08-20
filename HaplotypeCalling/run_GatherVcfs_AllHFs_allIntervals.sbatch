@@ -13,7 +13,7 @@
 module load java/1.8.0_45-fasrc01
 
 
-java -Xmx10g -XX:ParallelGCThreads=1 -cp ~/sw/bin/picard.jar GatherVcfs \
+java -Xmx10g -XX:ParallelGCThreads=1 -jar ~/sw/bin/picard.jar GatherVcfs \
 I=genotype_res/All_HFs_Int1.vcf.gz \
 I=genotype_res/All_HFs_Int2.vcf.gz \
 I=genotype_res/All_HFs_Int3.vcf.gz \
