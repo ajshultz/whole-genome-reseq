@@ -4,7 +4,7 @@
 #SBATCH -n 2
 #SBATCH -N 1
 #SBATCH --mem 12000
-#SBATCH -t 1-00:00
+#SBATCH -t 0-01:00
 #SBATCH -J GatherVcfs
 #SBATCH -o ./logs/GatherVcfs%j.out
 #SBATCH -e ./logs/GatherVcfs%j.err
