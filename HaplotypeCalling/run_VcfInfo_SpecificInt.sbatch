@@ -3,8 +3,8 @@
 #SBATCH -p serial_requeue
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --mem 20000
-#SBATCH -t 10:00:00
+#SBATCH --mem 4000
+#SBATCH -t 6:00:00
 #SBATCH -J vcfINFO
 #SBATCH -o logs/vcfINFO_%j.out
 #SBATCH -e logs/vcfINFO_%j.err
