@@ -3,7 +3,7 @@
 #SBATCH -p general
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --mem 14000
+#SBATCH --mem 17000
 #SBATCH -t 1-0:00:00
 #SBATCH -J ngsrelate
 #SBATCH -o logs/ngsrelate_%j.out
