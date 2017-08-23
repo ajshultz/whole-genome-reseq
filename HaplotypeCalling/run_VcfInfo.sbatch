@@ -11,7 +11,7 @@
 #SBATCH --constraint=holyib
 #SBATCH --array=1-10
 
-module load vcftools/0.1.14-fasrc01
+module load vcftools/0.1.14-fasrc01 zlib/1.2.8-fasrc12
 
 SAMPLES=$1
 
