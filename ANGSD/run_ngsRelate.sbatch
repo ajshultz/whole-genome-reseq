@@ -21,4 +21,5 @@ INDCOUNT=$2
 #zcat results/${POP}_autoonly_SNPs.mafs.gz | cut -f6 | sed 1d > results/${POP}_autoonly_freq
 
 #Run ngsRelate between all individual pairs
-ngsRelate -g results/${POP}_autoonly_SNPs.glf.gz -n ${INDCOUNT} -f results/${POP}_autoonly_freq -m 0 -s 1 -i 100 > results/${POP}_autoonly_ngsrelate.res2
+#Originally -m 0 and -i 100
+ngsRelate -g results/${POP}_autoonly_SNPs.glf.gz -n ${INDCOUNT} -f results/${POP}_autoonly_freq -m 1 -s 1 > results/${POP}_autoonly_AccEM_ngsrelate.res
