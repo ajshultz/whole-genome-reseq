@@ -22,4 +22,4 @@ INDCOUNT=$2
 
 #Run ngsRelate between all individual pairs
 #Originally -m 0 and -i 100
-ngsRelate -g results/${POP}_autoonly_SNPs.glf.gz -n ${INDCOUNT} -f results/${POP}_autoonly_freq -m 1 -s 1 > results/${POP}_autoonly_AccEM_ngsrelate.res
+ngsRelate -g results/${POP}_autoonly_SNPs.glf.gz -n ${INDCOUNT} -f results/${POP}_autoonly_freq -m 0 -s 1 -i 100 > results/${POP}_autoonly_ngsrelate.res
