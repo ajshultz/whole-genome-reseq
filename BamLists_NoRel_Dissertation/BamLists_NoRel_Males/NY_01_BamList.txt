@@ -1,0 +1,14 @@
+/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/NY_01_01_realigned.sorted.bam
+/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/NY_01_02_realigned.sorted.bam
+/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/NY_01_03_realigned.sorted.bam
+/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/NY_01_05_realigned.sorted.bam
+/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/NY_01_06_realigned.sorted.bam
+/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/NY_01_08_realigned.sorted.bam
+/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/NY_01_09_realigned.sorted.bam
+/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/NY_01_10_realigned.sorted.bam
+/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/NY_01_11_realigned.sorted.bam
+/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/NY_01_12_realigned.sorted.bam
+/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/NY_01_13_realigned.sorted.bam
+/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/NY_01_14_realigned.sorted.bam
+/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/NY_01_15_realigned.sorted.bam
+/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/NY_01_16_realigned.sorted.bam
