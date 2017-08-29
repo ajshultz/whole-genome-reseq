@@ -42,3 +42,4 @@ vcftools --gzvcf genotype_res/All_${SAMPLES}s_Int${SLURM_ARRAY_TASK_ID}.vcf.gz -
 
 vcftools --gzvcf genotype_res/All_${SAMPLES}s_Int${SLURM_ARRAY_TASK_ID}.vcf.gz --out qual_info/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}_missing --missing-indv
 
+vcftools --gzvcf genotype_res/All_${SAMPLES}s_Int${SLURM_ARRAY_TASK_ID}.vcf.gz --out qual_info/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}_FS --get-INFO FS

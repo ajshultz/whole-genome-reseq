@@ -42,3 +42,4 @@ vcftools --gzvcf genotype_res/All_${SAMPLES}s_Int${INT}.vcf.gz --out qual_info/$
 
 vcftools --gzvcf genotype_res/All_${SAMPLES}s_Int${INT}.vcf.gz --out qual_info/${SAMPLES}_Int${INT}_missing --missing-indv
 
+vcftools --gzvcf genotype_res/All_${SAMPLES}s_Int${INT}.vcf.gz --out qual_info/${SAMPLES}_Int${INT}_FS --get-INFO FS
