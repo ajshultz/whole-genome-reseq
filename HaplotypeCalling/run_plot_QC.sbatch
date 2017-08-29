@@ -10,7 +10,8 @@
 #SBATCH -e logs/angsd_lrt_plot_%j.err
 #SBATCH --constraint=holyib
 
-module load R
+module load R/3.4.1-fasrc01
+export R_LIBS_USER=$HOME/sw/R:$R_LIBS_USER
 
 SPECIES=$1
 SITES_FILE=$2
