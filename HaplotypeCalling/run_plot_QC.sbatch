@@ -3,9 +3,9 @@
 #SBATCH -p serial_requeue
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --mem 32000
+#SBATCH --mem 24000
 #SBATCH -t 0-01:00:00
-#SBATCH -J angsd_lrt_plot
+#SBATCH -J angsd_qc_plot
 #SBATCH -o logs/qc_plot_%j.out
 #SBATCH -e logs/qc_plot_%j.err
 #SBATCH --constraint=holyib

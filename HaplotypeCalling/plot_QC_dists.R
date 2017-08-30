@@ -9,7 +9,6 @@ plot_dir <- args[3]
 qual_dir <- args[4]
 stat <- args[5]
 
-print(stat)
 
 library(tidyverse)
 library(ggplot2)
@@ -95,12 +94,12 @@ ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_unfiltered.pdf",sep=""),device=
 FS <- FS %>% filter(nchar(REF)==1 & nchar(ALT) == 1) %>% unite(CHROM,POS,sep="_",col="scaff_pos",remove=FALSE) %>% anti_join(exclude,by="scaff_pos") %>% arrange(CHROM,POS)
 
 ggplot(data=FS) + geom_density(mapping=aes(x=FS)) + ggtitle(label=paste(sp,stat,"SNPS 1.5x coverage filter",sep=" "),subtitle=paste(nrow(FS)," sites",sep=""))
-ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_snps_covfilter.pdf"),device="pdf")
+ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_snps_covfilter.pdf",sep=""),device="pdf")
 
 FS <- FS %>% filter(FS != 0)
 
 ggplot(data=FS) + geom_density(mapping=aes(x=FS)) + ggtitle(label=paste(sp,stat,"SNPS 1.5x coverage filter",sep=" "),subtitle=paste(nrow(FS)," sites",sep=""))
-ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_snps_covfilter_no0s.pdf"),device="pdf")
+ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_snps_covfilter_no0s.pdf",sep=""),device="pdf")
 
 rm(FS)
 }
