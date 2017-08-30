@@ -9,6 +9,7 @@ plot_dir <- args[3]
 qual_dir <- args[4]
 stat <- args[5]
 
+print(stat)
 
 library(tidyverse)
 library(ggplot2)
