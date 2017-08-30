@@ -59,7 +59,7 @@ for (i in 1:10){
 }
 
 ggplot(data=MQ) + geom_density(mapping=aes(x=MQ)) + ggtitle(label=paste(sp,stat,"unfiltered",sep=" "),subtitle=paste(nrow(MQ)," sites",sep=""))
-ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_unfiltered.pdf"),device="pdf")
+ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_unfiltered.pdf",sep=""),device="pdf")
 
 #Filter non-biallelic sites and sites excluded by 1.5x depth of coverage
 
@@ -88,7 +88,7 @@ for (i in 1:10){
 }
 
 ggplot(data=FS) + geom_density(mapping=aes(x=FS)) + ggtitle(label=paste(sp,stat,"unfiltered",sep=" "),subtitle=paste(nrow(FS)," sites",sep=""))
-ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_unfiltered.pdf"),device="pdf")
+ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_unfiltered.pdf",sep=""),device="pdf")
 
 #Filter non-biallelic sites and sites excluded by 1.5x depth of coverage
 
@@ -119,7 +119,7 @@ for (i in 1:10){
 }
 
 ggplot(data=SOR) + geom_density(mapping=aes(x=SOR)) + ggtitle(label=paste(sp,stat,"unfiltered",sep=" "),subtitle=paste(nrow(SOR)," sites",sep=""))
-ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_unfiltered.pdf"),device="pdf")
+ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_unfiltered.pdf",sep=""),device="pdf")
 
 #Filter non-biallelic sites and sites excluded by 1.5x depth of coverage
 
@@ -145,7 +145,7 @@ for (i in 1:10){
 }
 
 ggplot(data=MQRS) + geom_density(mapping=aes(x=MQRankSum)) + ggtitle(label=paste(sp,stat,"unfiltered",sep=" "),subtitle=paste(nrow(MQRS)," sites",sep=""))
-ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_unfiltered.pdf"),device="pdf")
+ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_unfiltered.pdf",sep=""),device="pdf")
 
 #Filter non-biallelic sites and sites excluded by 1.5x depth of coverage
 
@@ -171,7 +171,7 @@ for (i in 1:10){
 }
 
 ggplot(data=RPRS) + geom_density(mapping=aes(x=ReadPosRankSum)) + ggtitle(label=paste(sp,stat,"unfiltered",sep=" "),subtitle=paste(nrow(RPRS)," sites",sep=""))
-ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_unfiltered.pdf"),device="pdf")
+ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_unfiltered.pdf",sep=""),device="pdf")
 
 #Filter non-biallelic sites and sites excluded by 1.5x depth of coverage
 
