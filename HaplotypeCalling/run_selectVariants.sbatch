@@ -24,5 +24,5 @@ java -Xmx12g -XX:ParallelGCThreads=1 -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -select "FS < 60" \
 -select "SOR < 3.0" \
 -select "MQRankSum > -4.0" \
--select "ReadPosRankSum > -3.0" 
+-select "ReadPosRankSum > -3.0" \
 -selectType SNP
