@@ -14,13 +14,13 @@
 source /n/home13/ashultz/sw/progs/vcftools-0.1.15/setup.sh
 
 #Filter sites not passing coverage filters
-vcftools --gzvcf genotype_res_filtered/All_CPs_FilteredSNPs.vcf.gz /
---exclude-bed ../genome/bedfiles/All_HF_Whole_Genome_Exclude_Sites_d50.bed.bed /
---recode --recode-INFO-all /
+vcftools --gzvcf genotype_res_filtered/All_CPs_FilteredSNPs.vcf.gz \
+--exclude-bed ../genome/bedfiles/All_HF_Whole_Genome_Exclude_Sites_d50.bed.bed \
+--recode --recode-INFO-all \
 --out genotype_res_filtered/All_CPs_FilteredSNPsIndsCov.vcf.gz
 
 
-vcftools --gzvcf genotype_res_filtered/All_CCs_FilteredSNPs.vcf.gz /
---exclude-bed ../genome/bedfiles/All_HF_Whole_Genome_Exclude_Sites_d50.bed.bed /
---recode --recode-INFO-all /
+vcftools --gzvcf genotype_res_filtered/All_CCs_FilteredSNPs.vcf.gz \
+--exclude-bed ../genome/bedfiles/All_HF_Whole_Genome_Exclude_Sites_d50.bed.bed \
+--recode --recode-INFO-all \
 --out genotype_res_filtered/All_CCs_FilteredSNPsIndsCov.vcf.gz
