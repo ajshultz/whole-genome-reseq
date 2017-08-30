@@ -19,5 +19,5 @@ java -Xmx12g -XX:ParallelGCThreads=1 -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -R ../genome/final.assembly.homo.fa \
 -V genotype_res/All_${SPECIES}s_Combined.vcf.gz \
 -o genotype_res_filtered/All_${SPECIES}s_FilteredSNPs.vcf.gz \
--select "QD > 2.0 || MQ > 40 || FS < 60 || SOR < 3.0 || MQRankSum > -4.0 || ReadPosRankSum > -3.0" \
+-select "QD > 2.0 || MQ > 40.0 || FS < 60.0 || SOR < 3.0 || MQRankSum > -4.0 || ReadPosRankSum > -3.0" \
 -selectType SNP
