@@ -7,6 +7,7 @@ sp <- args[1]
 exclude_file <- args[2]
 plot_dir <- args[3]
 qual_dir <- args[4]
+stat <- args[5]
 
 
 library(tidyverse)
@@ -18,7 +19,7 @@ exclude <- read_tsv(exclude_file,col_names = c("scaffold","pos_-1","pos"))
 exclude <- exclude %>% unite(scaffold,pos,sep = "_",col = "scaff_pos") %>% select("scaff_pos")
 
 #First look at quality by depth, or QD
-stat <- "QD"
+if (stat == "QD"){
 
 for (i in 1:10){
   if (i == 1){
@@ -40,10 +41,12 @@ ggplot(data=QD) + geom_density(mapping=aes(x=QD)) + ggtitle(label=paste(sp,stat,
 ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_snps_covfilter.pdf",sep=""),device="pdf")
 
 rm(QD)
+}
 
 ########################################
 #Next, "mapping quality" or MQ
-stat <- "MQ"
+
+if (stat == "MQ"){
 
 for (i in 1:10){
   if (i == 1){
@@ -68,11 +71,11 @@ ggplot(data=MQ) + geom_density(mapping=aes(x=MQ)) + ggtitle(label=paste(sp,stat,
 ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_snps_covfilter_constrained.pdf",sep=""),device="pdf")
 
 rm(MQ)
-
+}
 
 ########################################
 #Next, "FisherStrand" or FS
-stat <- "FS"
+if (stat == "FS"){
 
 for (i in 1:10){
   if (i == 1){
@@ -99,11 +102,11 @@ ggplot(data=FS) + geom_density(mapping=aes(x=FS)) + ggtitle(label=paste(sp,stat,
 ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_snps_covfilter_no0s.pdf"),device="pdf")
 
 rm(FS)
-
+}
 
 ########################################
 #Next, "Strand Odds Ratio" or SOR
-stat <- "SOR"
+if (stat == "SOR"){
 
 for (i in 1:10){
   if (i == 1){
@@ -125,11 +128,11 @@ ggplot(data=SOR) + geom_density(mapping=aes(x=SOR)) + ggtitle(label=paste(sp,sta
 ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_snps_covfilter.pdf",sep=""),device="pdf")
 
 rm(SOR)
-
+}
 
 ########################################
 #Next, "mapping quality rank sum" or MQRS
-stat <- "MQRS"
+if (stat == "MQRS"){
 
 for (i in 1:10){
   if (i == 1){
@@ -151,11 +154,11 @@ ggplot(data=MQRS) + geom_density(mapping=aes(x=MQRankSum)) + ggtitle(label=paste
 ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_snps_covfilter.pdf",sep=""),device="pdf")
 
 rm(MQRS)
-
+}
 
 ########################################
 #Next, "read pos rank sum" or RPRS
-stat <- "RPRS"
+if (stat == "RPRS"){
 
 for (i in 1:10){
   if (i == 1){
@@ -177,7 +180,7 @@ ggplot(data=RPRS) + geom_density(mapping=aes(x=ReadPosRankSum)) + ggtitle(label=
 ggsave(filename=paste(plot_dir,"/",sp,"_",stat,"_snps_covfilter.pdf",sep=""),device="pdf")
 
 rm(RPRS)
-
+}
 
 
 
