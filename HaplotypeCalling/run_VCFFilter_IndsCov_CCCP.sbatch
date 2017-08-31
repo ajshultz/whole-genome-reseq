@@ -12,6 +12,7 @@
 
 #Use user-installed version of vcftools (v. 0.1.15)
 module load zlib
+module load tabix
 source /n/home13/ashultz/sw/progs/vcftools-0.1.15/setup.sh
 
 #Filter sites not passing coverage filters
