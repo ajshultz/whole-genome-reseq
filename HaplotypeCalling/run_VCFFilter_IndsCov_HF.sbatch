@@ -11,6 +11,7 @@
 
 
 #Use user-installed version of vcftools (v. 0.1.15)
+module load zlib
 source /n/home13/ashultz/sw/progs/vcftools-0.1.15/setup.sh
 
 #Filter related individuals and sites not passing coverage filters
