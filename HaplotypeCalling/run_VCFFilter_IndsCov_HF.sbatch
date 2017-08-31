@@ -4,7 +4,7 @@
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem 24000
-#SBATCH -t 6:00:00
+#SBATCH -t 12:00:00
 #SBATCH -J CovIndFilt
 #SBATCH -o logs/CovIndFilt_%j.out
 #SBATCH -e logs/CovIndFilt_%j.err
@@ -32,9 +32,13 @@ vcftools --gzvcf genotype_res_filtered/All_HFs_FilteredSNPs.vcf.gz \
 —remove-indv WA_14_09 \
 --exclude-bed ../genome/bedfiles/All_HF_Whole_Genome_Exclude_Sites_d50.bed\
 --recode --recode-INFO-all \
---out genotype_res_filtered/All_HFs_FilteredSNPsIndsCov.vcf.gz
+--out genotype_res_filtered/All_HFs_FilteredSNPsIndsCov
+
+bgzip genotype_res_filtered/All_HFs_FilteredSNPsIndsCov.recode.vcf
 
 #Create autosome only vcf
 vcftools --gzvcf genotype_res_filtered/All_HFs_FilteredSNPsIndsCov.vcf.gz\
 --include-bed ../genome/bedfiles/All_HF_Whole_Genome_Include_Autosomal_Sites_d50.bed \
---out genotype_res_filtered/All_HFs_FilteredSNPsIndsCov_Auto.vcf.gz
+--out genotype_res_filtered/All_HFs_FilteredSNPsIndsCov_Auto
+
+bgzip genotype_res_filtered/All_HFs_FilteredSNPsIndsCov_Auto.recode.vcf
