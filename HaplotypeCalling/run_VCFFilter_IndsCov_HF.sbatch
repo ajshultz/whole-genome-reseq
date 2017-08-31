@@ -29,7 +29,7 @@ vcftools --gzvcf genotype_res_filtered/All_HFs_FilteredSNPs.vcf.gz \
 —remove-indv OH_90_02 \
 —remove-indv WA_14_05 \
 —remove-indv WA_14_09 \
---exclude-bed ../genome/bedfiles/All_HF_Whole_Genome_Exclude_Sites_d50.bed.bed \
+--exclude-bed ../genome/bedfiles/All_HF_Whole_Genome_Exclude_Sites_d50.bed\
 --recode --recode-INFO-all \
 --out genotype_res_filtered/All_HFs_FilteredSNPsIndsCov.vcf.gz
 
