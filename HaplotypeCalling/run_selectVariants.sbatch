@@ -3,7 +3,7 @@
 #SBATCH -p general
 #SBATCH -n 2
 #SBATCH -N 1
-#SBATCH --mem 16000
+#SBATCH --mem 6000
 #SBATCH -t 0-12:00
 #SBATCH -J selectVariants
 #SBATCH -o logs/SelVar_%j.out

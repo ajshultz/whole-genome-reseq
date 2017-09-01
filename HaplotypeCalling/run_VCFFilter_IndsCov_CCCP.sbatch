@@ -3,7 +3,7 @@
 #SBATCH -p serial_requeue
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --mem 24000
+#SBATCH --mem 4000
 #SBATCH -t 6:00:00
 #SBATCH -J CovIndFilt
 #SBATCH -o logs/CovIndFilt_%j.out
