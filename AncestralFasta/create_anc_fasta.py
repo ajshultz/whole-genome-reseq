@@ -277,6 +277,7 @@ def main():
 	#For real script will need to add a step to run it through the vcftools command to select the scaffold of interest.
 	#HF
  	#vcf_in = 'All_HFs_testfile.vcf.gz'
+ 	sp_in = "HF"
  	#CC and CP
 	#vcf_out1 = 'All_CCs_testfile.vcf.gz'
 	sp1 = 'CC'
@@ -295,7 +296,8 @@ def main():
  	out_file = '%s_ancestral_allele.%s.csv' % (out_stem,chr)
  	anc_fasta_file = '%s_ancestral_allele.%s.fasta' % (out_stem,chr)
 	
- 	var_in = get_vcf(vcf_in, 'in')
+	vcf_chr_in = get_chromosome_vcf(vcf_in, sp_in, chr)
+ 	var_in = get_vcf(vcf_chr_in, 'in')
 
 	vcf_chr_out1 = get_chromosome_vcf(vcf_out1, sp1, chr) 	
  	var_out1 = get_vcf(vcf_out1, 'out')	
