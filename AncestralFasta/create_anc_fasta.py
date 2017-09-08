@@ -265,14 +265,14 @@ def main():
         
         args = parser.parse_args()
         chr = args.chr
-		genome_ref = args.ref
-		vcf_in = args.vcf_in
-		vcf_out1 = args.vcf_out1
-		vcf_out2 = args.vcf_out2
-		vcf_out3 = args.vcf_out3
-		vcf_out4 = args.vcf_out4
-		vcf_out5 = args.vcf_out5
-		out_stem = args.out
+        genome_ref = args.ref
+        vcf_in = args.vcf_in
+        vcf_out1 = args.vcf_out1
+        vcf_out2 = args.vcf_out2
+        vcf_out3 = args.vcf_out3
+        vcf_out4 = args.vcf_out4
+        vcf_out5 = args.vcf_out5
+        out_stem = args.out
 
 	#For real script will need to add a step to run it through the vcftools command to select the scaffold of interest.
 	#HF
