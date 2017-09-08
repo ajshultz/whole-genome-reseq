@@ -213,8 +213,7 @@ def trawl_genome(out_file, anc_fasta_file, chr, f_ref, var_in, var_out1, var_out
 	for line_count, (l_ref) in enumerate(f_ref):
 		l_ref = l_ref.strip()
 		
-		print len(l_ref)
-		if len(l_ref) != 60:
+		if len(l_ref) > 60:
 			print 'Fasta lines not 60 bases, oh no!'
 			quit()
 
