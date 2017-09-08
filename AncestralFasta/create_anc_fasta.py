@@ -192,8 +192,9 @@ def get_chromosome(genome, chr):
 #Make sure to send this to the vcf reader
 def get_chromosome_vcf(vcf_file, species, chr):
 	outfile = species + '_' + chr + '.vcf.gz'
-	subprocess.call('/n/home13/ashultz/sw/progs/vcftools-0.1.15/bin/vcftools --gzvcf %s --chr %s --recode --stdout | gzip -c > %s' %(vcf_file, chr, outfile), shell=True)
+	#subprocess.call('/n/home13/ashultz/sw/progs/vcftools-0.1.15/bin/vcftools --gzvcf %s --chr %s --recode --stdout | gzip -c > %s' %(vcf_file, chr, outfile), shell=True)
 	#subprocess.call('/Users/allisonshultz/miniconda2/bin/vcftools --gzvcf %s --chr %s --recode --stdout | gzip -c > %s' %(vcf_file, chr, outfile), shell=True)
+	subprocess.call('tabix %s %s > %s' %(vcf_file, chr, outfile), shell=True)
 	return outfile
 
 def pp_hist(base_info):
