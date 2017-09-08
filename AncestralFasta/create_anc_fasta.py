@@ -301,10 +301,10 @@ def main():
  	var_in = get_vcf(vcf_chr_in, 'in')
 
 	vcf_chr_out1 = get_chromosome_vcf(vcf_out1, sp1, chr) 	
- 	var_out1 = get_vcf(vcf_out1, 'out')	
+ 	var_out1 = get_vcf(vcf_chr_out1, 'out')	
  	
 	vcf_chr_out2 = get_chromosome_vcf(vcf_out2, sp2, chr) 	
- 	var_out2 = get_vcf(vcf_out2, 'out')
+ 	var_out2 = get_vcf(vcf_chr_out2, 'out')
 	
 	vcf_chr_out3 = get_chromosome_vcf(vcf_out3, sp3, chr)
  	#vcf_chr_out3 = 'PinEnu_scaffold_0_test.vcf.gz'
