@@ -241,6 +241,7 @@ def trawl_genome(out_file, anc_fasta_file, chr, f_ref, var_in, var_out1, var_out
 
 			else:
 				anc_fasta.write(b_ref)
+		anc_fasta.write("\n")
 							
 	out.close()
 	anc_fasta.close()
