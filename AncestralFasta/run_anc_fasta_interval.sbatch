@@ -8,7 +8,7 @@
 #SBATCH -J AncRec
 #SBATCH -o ../logs/AncRec_%A_%a.out
 #SBATCH -e ../logs/AncRec_%A_%a.err
-#SBATCH --constraint=holylfs
+#SBATCH --constraint=holyib
 #SBATCH --array=1-30
 
 
