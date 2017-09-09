@@ -328,6 +328,7 @@ def main():
  	
 ##Need to add clean up for vcfs - remove scaffold files that have been created.
 
+ 	clean_up_vcf(vcf_chr_in)
  	clean_up_vcf(vcf_chr_out1)
  	clean_up_vcf(vcf_chr_out2)
  	clean_up_vcf(vcf_chr_out3)

@@ -4,18 +4,27 @@
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem 8000
-#SBATCH -t 4-00:00:00
-#SBATCH -J CovIndFilt
-#SBATCH -o logs/CovIndFilt_%j.out
-#SBATCH -e logs/CovIndFilt_%j.err
-
+#SBATCH -t 0-06:00:00
+#SBATCH -J AncRec
+#SBATCH -o ../logs/AncRec_%A_%a.out
+#SBATCH -e ../logs/AncRec_%A_%a.err
+#SBATCH --constraint=holylfs
+#SBATCH --array=1-30
 
 
 module load samtools
-module load zlib
 module load tabix
 
 #Running in anc_fasta directory in gatk
-python /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/AncestralFasta/create_anc_fasta.py --ref ../../genome/final.assembly.homo.fa --vcf_in ../genotype_res_filtered/All_HFs_FilteredSNPsIndsCov.recode.vcf.gz --vcf_out1 ../genotype_res_filtered/All_CCs_FilteredSNPsIndsCov.recode.vcf.gz --vcf_out2 All_CPs_FilteredSNPsIndsCov.recode.vcf.gz --vcf_out3 ../outgroups/PinEnu_1.vcf.gz --vcf_out4 ../outgroups/CarEry_1.vcf.gz --vcf_out5 ../outgroups/UraSib_1.vcf.gz --chr scaffold_0 --out ./HF
 
-python /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/AncestralFasta/create_anc_fasta.py --ref ../../genome/final.assembly.homo.fa --vcf_in ../genotype_res_filtered/All_HFs_FilteredSNPsIndsCov.recode.vcf.gz --vcf_out1 ../genotype_res_filtered/All_CCs_FilteredSNPsIndsCov.recode.vcf.gz --vcf_out2 ../genotype_res_filtered/All_CPs_FilteredSNPsIndsCov.recode.vcf.gz --vcf_out3 ../outgroups/PinEnu_30.vcf.gz --vcf_out4 ../outgroups/CarEry_30.vcf.gz --vcf_out5 ../outgroups/UraSib_30.vcf.gz --chr scaffold_1154 --out ./HF
+int_list = ../split_fai_30/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list
+
+for int in (int_list)
+do
+python /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/AncestralFasta/create_anc_fasta.py --ref ../../genome/final.assembly.homo.fa --vcf_in ../genotype_res_filtered/All_HFs_FilteredSNPsIndsCov.recode.vcf.gz --vcf_out1 ../genotype_res_filtered/All_CCs_FilteredSNPsIndsCov.recode.vcf.gz --vcf_out2 ../genotype_res_filtered/All_CPs_FilteredSNPsIndsCov.recode.vcf.gz --vcf_out3 ../outgroups/PinEnu_${SLURM_ARRAY_TASK_ID}.vcf.gz --vcf_out4 ../outgroups/CarEry_${SLURM_ARRAY_TASK_ID}.vcf.gz --vcf_out5 ../outgroups/UraSib_${SLURM_ARRAY_TASK_ID}.vcf.gz --chr ${int} --out ./HF
+done
+
+for int in (../split_fai_30/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list)
+do
+echo ${int}
+done
