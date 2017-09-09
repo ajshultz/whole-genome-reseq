@@ -252,6 +252,8 @@ def clean_up(chr_out, f_out):
 	f_out.close()
 	os.remove(chr_out)
 	
+def clean_up_vcf(chr_out_vcf):
+	os.remove(chr_out_vcf)
 
 def main():
 	parser = argparse.ArgumentParser()
@@ -326,11 +328,11 @@ def main():
  	
 ##Need to add clean up for vcfs - remove scaffold files that have been created.
 
- 	clean_up(vcf_chr_out1, var_out1)
- 	clean_up(vcf_chr_out2, var_out2)
- 	clean_up(vcf_chr_out3, var_out3)
- 	clean_up(vcf_chr_out4, var_out4)
-  	clean_up(vcf_chr_out5, var_out5)
+ 	clean_up_vcf(vcf_chr_out1, var_out1)
+ 	clean_up_vcf(vcf_chr_out2, var_out2)
+ 	clean_up_vcf(vcf_chr_out3, var_out3)
+ 	clean_up_vcf(vcf_chr_out4, var_out4)
+  	clean_up_vcf(vcf_chr_out5, var_out5)
  	clean_up(chr_ref, f_ref)
 
 
