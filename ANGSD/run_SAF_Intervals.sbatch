@@ -3,11 +3,11 @@
 #SBATCH -p general
 #SBATCH -n 8
 #SBATCH -N 1
-#SBATCH --mem 24000
+#SBATCH --mem 32000
 #SBATCH -t 0-8:00:00
 #SBATCH -J angsd_saf
-#SBATCH -o logs/angsd_saf_%A_%a.out
-#SBATCH -e logs/angsd_saf_%A_%a.err
+#SBATCH -o logs_postdiss/angsd_saf_%A_%a.out
+#SBATCH -e logs_postdiss/angsd_saf_%A_%a.err
 #SBATCH --constraint=holyib
 #SBATCH --array=1-20
 
