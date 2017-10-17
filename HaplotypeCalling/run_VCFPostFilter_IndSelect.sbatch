@@ -19,9 +19,9 @@ VCF_HANDLE=$2
 
 #Filter related individuals and sites not passing coverage filters
 vcftools --gzvcf genotype_res_filtered/All_HFs_FilteredSNPsIndsCov.recode.vcf.gz \
---keep $(INDS_FILE) \
+--keep ${INDS_FILE} \
 --recode --recode-INFO-all \
---out genotype_res_filtered_indsubsets/$(VCF_HANDLE)
+--out genotype_res_filtered_indsubsets/${VCF_HANDLE}
 
-bgzip genotype_res_filtered_indsubsets/$(VCF_HANDLE).vcf
+bgzip genotype_res_filtered_indsubsets/${VCF_HANDLE}.vcf
 
