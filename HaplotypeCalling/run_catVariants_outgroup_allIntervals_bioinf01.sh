@@ -36,5 +36,5 @@ java -Xmx10g -XX:ParallelGCThreads=3 -cp ~/sw/bin/GenomeAnalysisTK.jar org.broad
 --variant outgroups/${SPECIES}_28.vcf.gz \
 --variant outgroups/${SPECIES}_29.vcf.gz \
 --variant outgroups/${SPECIES}_30.vcf.gz \
---output outgroups/${SPECIES}_Combined.vcf.gz \
+-out outgroups/${SPECIES}_Combined.vcf.gz \
 --assumeSorted
