@@ -86,7 +86,7 @@ def translate_id(feature,id,clean_blastres):
 		new_id[1] = "Parent=%s"%id_parent
 		new_id[2] = "Name=%s"%id_name
 		new_id = ";".join(new_id)
-	elif feature in ["CDS","exon", "three-prime-utr","five-prime-utr"]:
+	elif feature in ["CDS","exon", "three_prime_utr","five_prime_utr"]:
 		id_id = id[0][3:]
 		id_id_id = id_id.split(":")
 		id_parent = id[1][7:]
