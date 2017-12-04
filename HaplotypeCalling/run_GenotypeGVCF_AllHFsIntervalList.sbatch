@@ -4,7 +4,7 @@
 #SBATCH -n 2
 #SBATCH -N 1
 #SBATCH --mem 14000
-#SBATCH -t 5-00:00
+#SBATCH -t 7-00:00
 #SBATCH -J genotypeHF
 #SBATCH -o ./logs/genotypeGVCF_HF_%A_%a.out
 #SBATCH -e ./logs/genotypeGVCF_HF_%A_%a.err
