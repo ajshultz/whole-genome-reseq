@@ -23,5 +23,5 @@ vcftools --gzvcf genotype_res_filtered/All_HFs_FilteredSNPsIndsCov.recode.vcf.gz
 --recode --recode-INFO-all \
 --out genotype_res_filtered_indsubsets/${VCF_HANDLE}
 
-bgzip genotype_res_filtered_indsubsets/${VCF_HANDLE}.vcf
+bgzip genotype_res_filtered_indsubsets/${VCF_HANDLE}.recode.vcf
 
