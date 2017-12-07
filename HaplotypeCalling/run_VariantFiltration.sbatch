@@ -20,7 +20,7 @@ java -Xmx5g -XX:ParallelGCThreads=1 -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -T VariantFiltration \
 -R ../genome/final.assembly.homo.fa \
 -V genotype_res_invariant/All_${SPECIES}s_Int${SLURM_ARRAY_TASK_ID}.vcf.gz \
--filterExpression "(vc.isSNP() && (vc.hasAttribute('ReadPosRankSum') && ReadPosRankSum < -3.0)) || (vc.hasAttribute('QD') && QD < 2.0) "  \
+--filterExpression "(vc.isSNP() && (vc.hasAttribute('ReadPosRankSum') && ReadPosRankSum < -3.0)) || (vc.hasAttribute('QD') && QD < 2.0) "  \
 --filterName "badSeq"  \
 --filterExpression "(vc.isSNP() && ((vc.hasAttribute('FS') && FS > 60.0) || (vc.hasAttribute('SOR') && SOR > 3.0)))"  \
 --filterName "badStrand"  \
