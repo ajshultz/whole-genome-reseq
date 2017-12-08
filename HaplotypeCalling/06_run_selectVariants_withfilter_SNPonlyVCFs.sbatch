@@ -14,7 +14,7 @@ module load java/1.8.0_45-fasrc01
 SPECIES=$1
 
 
-java -Xmx12g -XX:ParallelGCThreads=1 -jar ~/sw/bin/GenomeAnalysisTK.jar \
+java -Xmx6g -XX:ParallelGCThreads=1 -jar ~/sw/bin/GenomeAnalysisTK.jar \
 -T SelectVariants \
 -R ../genome/final.assembly.homo.fa \
 -V genotype_res/All_${SPECIES}s_Combined.vcf.gz \
