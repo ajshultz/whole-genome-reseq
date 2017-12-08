@@ -4,7 +4,7 @@
 #SBATCH -n 2
 #SBATCH -N 1
 #SBATCH --mem 6000
-#SBATCH -t 0-12:00
+#SBATCH -t 0-3:00
 #SBATCH -J VariantFiltration
 #SBATCH -o logs/VarFil_%A_%a.out
 #SBATCH -e logs/VarFil_%A_%a.err
