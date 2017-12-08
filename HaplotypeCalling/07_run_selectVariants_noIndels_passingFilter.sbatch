@@ -11,15 +11,18 @@
 #SBATCH --constraint=holyib
 #SBATCH --array=1-10
 
-module load java/1.8.0_45-fasrc01
+#Use user-installed version of vcftools (v. 0.1.15)
+module load zlib
+module load tabix
+source /n/home13/ashultz/sw/progs/vcftools-0.1.15/setup.sh
 
 SPECIES=$1
 
-
-java -Xmx5g -XX:ParallelGCThreads=1 -jar ~/sw/bin/GenomeAnalysisTK.jar \
--T SelectVariants \
--R ../genome/final.assembly.homo.fa \
--V genotype_res_invariant_filterlabel/All_${SPECIES}s_FilteredSNPs_Int${SLURM_ARRAY_TASK_ID}.vcf.gz \
--o genotype_res_invariant_filtered/All_${SPECIES}s_FilteredSNPs_Int${SLURM_ARRAY_TASK_ID}.vcf.gz \
---excludeFiltered \
---selectTypeToExclude INDEL
+vcftools --gzvcf genotype_res_invariant_filterlabel/All_${SPECIES}s_FilteredSNPs_Int${SLURM_ARRAY_TASK_ID}.vcf.gz \
+--remove-filtered badSeq \
+--remove-filtered badMap \
+--remove-filtered badStrand \
+--remove-indels \
+--recode --recode-INFO-all \
+--out genotype_res_invariant_filtered/All_${SPECIES}s_FilteredSNPs_Int${SLURM_ARRAY_TASK_ID}.vcf.gz \
+2> logs_vcftools/All_${SPECIES}s_Int${SLURM_ARRAY_TASK_ID}_remove-filtered.log
