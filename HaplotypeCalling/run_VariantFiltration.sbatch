@@ -26,4 +26,4 @@ java -Xmx5g -XX:ParallelGCThreads=1 -jar ~/sw/bin/GenomeAnalysisTK.jar \
 --filterName "badStrand"  \
 --filterExpression "vc.isSNP() && ((vc.hasAttribute('MQ') && MQ < 40.0) || (vc.hasAttribute('MQRankSum') && MQRankSum < -4.0))"  \
 --filterName "badMap"  \
--o genotype_res_invariant_filterlabel/All_${SPECIES}s_FilteredSNPs.vcf.gz
+-o genotype_res_invariant_filterlabel/All_${SPECIES}s_FilteredSNPs_Int${SLURM_ARRAY_TASK_ID}.vcf.gz
