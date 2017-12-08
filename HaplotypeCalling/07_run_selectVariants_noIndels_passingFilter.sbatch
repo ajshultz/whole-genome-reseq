@@ -24,5 +24,8 @@ vcftools --gzvcf genotype_res_invariant_filterlabel/All_${SPECIES}s_FilteredSNPs
 --remove-filtered badStrand \
 --remove-indels \
 --recode --recode-INFO-all \
---out genotype_res_invariant_filtered/All_${SPECIES}s_FilteredSNPs_Int${SLURM_ARRAY_TASK_ID}.vcf.gz \
+--out genotype_res_invariant_filtered/All_${SPECIES}s_FilteredSNPs_Int${SLURM_ARRAY_TASK_ID} \
 2> logs_vcftools/All_${SPECIES}s_Int${SLURM_ARRAY_TASK_ID}_remove-filtered.log
+
+bgzip genotype_res_invariant_filtered/All_${SPECIES}s_FilteredSNPs_Int${SLURM_ARRAY_TASK_ID}.recode.vcf
+tabix -p vcf genotype_res_invariant_filtered/All_${SPECIES}s_FilteredSNPs_Int${SLURM_ARRAY_TASK_ID}.recode.vcf.gz
