@@ -20,7 +20,7 @@ SPECIES=$1
 bcftools view \
 -f .,PASS,LowQual \
 -R ../genome/bedfiles/All_HF_Whole_Genome_Include_Sites_d50.bed \
--o genotype_res_invariant_filtered/All_${SPECIES}s_FilteredSNPs_${SLURM_ARRAY_TASK_ID} \
+-o genotype_res_invariant_filtered/All_${SPECIES}s_FilteredSNPs_${SLURM_ARRAY_TASK_ID}.vcf.gz \
 --exclude-types indels \
 -O z \
 genotype_res_invariant_filterlabel/All_${SPECIES}s_FilteredSNPs_Int${SLURM_ARRAY_TASK_ID}.vcf.gz
