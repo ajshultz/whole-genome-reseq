@@ -4,7 +4,7 @@
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem 4000
-#SBATCH -t 0-4:00
+#SBATCH -t 0-8:00
 #SBATCH -J remove_filt
 #SBATCH -o logs/remove_filt_%A_%a.out
 #SBATCH -e logs/remove_filt_%A_%a.err
