@@ -23,7 +23,7 @@ bcftools view \
 -o genotype_res_invariant_filtered/All_${SPECIES}s_FilteredSNPs_${SLURM_ARRAY_TASK_ID} \
 --exclude-types indels \
 -O z \
-genotype_res_invariant_filterlabel/All_${SPECIES}s_FilteredSNPs_${SLURM_ARRAY_TASK_ID}.vcf.gz
+genotype_res_invariant_filterlabel/All_${SPECIES}s_FilteredSNPs_Int${SLURM_ARRAY_TASK_ID}.vcf.gz
 
 bcftools view \
 -r ../genome/bedfiles/All_HF_Whole_Genome_Include_Autosomal_Sites_d50.bed \

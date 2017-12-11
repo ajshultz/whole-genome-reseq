@@ -24,7 +24,7 @@ bcftools view \
 --exclude-types indels \
 -O z \
 -s ^CA_01_08,CA_14_05,CA_14_11,MA_14_15,MA_14_16,ME_01_11,ME_01_12,ME_90_12,NY_01_07,NY_01_08,NY_90_04,OH_90_02,WA_14_05,WA_14_09 \
-genotype_res_invariant_filterlabel/All_${SPECIES}s_FilteredSNPs_${SLURM_ARRAY_TASK_ID}.vcf.gz
+genotype_res_invariant_filterlabel/All_${SPECIES}s_FilteredSNPs_Int${SLURM_ARRAY_TASK_ID}.vcf.gz
 
 bcftools view \
 -r ../genome/bedfiles/All_HF_Whole_Genome_Include_Autosomal_Sites_d50.bed \
