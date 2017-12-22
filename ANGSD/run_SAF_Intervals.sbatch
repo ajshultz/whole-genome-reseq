@@ -6,8 +6,8 @@
 #SBATCH --mem 32000
 #SBATCH -t 0-8:00:00
 #SBATCH -J angsd_saf
-#SBATCH -o logs_postdiss/angsd_saf_%A_%a.out
-#SBATCH -e logs_postdiss/angsd_saf_%A_%a.err
+#SBATCH -o logs_postdis/angsd_saf_%A_%a.out
+#SBATCH -e logs_postdis/angsd_saf_%A_%a.err
 #SBATCH --constraint=holyib
 #SBATCH --array=1-20
 

@@ -6,8 +6,8 @@
 #SBATCH --mem 8000
 #SBATCH -t 0-1:00:00
 #SBATCH -J angsd_pca
-#SBATCH -o logs/angsd_pca_%j.out
-#SBATCH -e logs/angsd_pca_%j.err
+#SBATCH -o logs_postdis/angsd_pca_%j.out
+#SBATCH -e logs_postdis/angsd_pca_%j.err
 #SBATCH --constraint=holyib
 
 #Use ANGSD 9.12

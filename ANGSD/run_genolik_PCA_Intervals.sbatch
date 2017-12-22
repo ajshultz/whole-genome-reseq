@@ -6,8 +6,8 @@
 #SBATCH --mem 36000
 #SBATCH -t 1-0:00:00
 #SBATCH -J angsd_pca
-#SBATCH -o logs/angsd_pca_%A_%a.out
-#SBATCH -e logs/angsd_pca_%A_%a.err
+#SBATCH -o logs_postdis/angsd_pca_%A_%a.out
+#SBATCH -e logs_postdis/angsd_pca_%A_%a.err
 #SBATCH --constraint=holyib
 #SBATCH --array=1-20
 
