@@ -26,12 +26,12 @@ NIND=$4
 
 angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref $REF -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -sites ${SITES} -only_proper_pairs 1 -nThreads 12 -out results_pca/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID} -doCounts 1 -doMaf 1 -doMajorMinor 1 -GL 2 -skipTriallelic 1 -SNP_pval 1e-6 -doGeno 32 -doPost 1 -rf split_fai_20_angsd/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list
 
-gunzip results_pca/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}.geno.gz
+#gunzip results_pca/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}.geno.gz
 
-N_SITES=$(zcat results_pca/${SAMPLES}.mafs.gz | tail -n+2 | wc -l)
-echo ${N_SITES}
+#N_SITES=$(zcat results_pca/${SAMPLES}.mafs.gz | tail -n+2 | wc -l)
+#echo ${N_SITES}
 
 #Have to reload ngsTools
-module load ngsTools/0.615-fasrc01
+#module load ngsTools/0.615-fasrc01
 
-ngsCovar -probfile results_pca/${SAMPLES}.geno -outfile results_pca/${SAMPLES}.covar -nind ${NIND} -call 0 -norm 0 -minmaf 0.05 -nsites ${N_SITES}
+#ngsCovar -probfile results_pca/${SAMPLES}.geno -outfile results_pca/${SAMPLES}.covar -nind ${NIND} -call 0 -norm 0 -minmaf 0.05 -nsites ${N_SITES}
