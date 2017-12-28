@@ -1,5 +1,4 @@
 /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/ME_01_01_realigned.sorted.bam
-/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/ME_01_02_realigned.sorted.bam
 /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/ME_01_03_realigned.sorted.bam
 /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/ME_01_04_realigned.sorted.bam
 /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/indelrealign/merged_realigned_bams/ME_01_05_realigned.sorted.bam

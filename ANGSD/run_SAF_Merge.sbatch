@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH -p general
+#SBATCH -p shared
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem 16000
