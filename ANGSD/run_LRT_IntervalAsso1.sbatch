@@ -3,11 +3,11 @@
 #SBATCH -p shared
 #SBATCH -n 6
 #SBATCH -N 1
-#SBATCH --mem 30000
+#SBATCH --mem 16000
 #SBATCH -t 1-00:00:00
 #SBATCH -J angsd_LRT
-#SBATCH -o logs/angsd_LRT_%A_%a.out
-#SBATCH -e logs/angsd_LRT_%A_%a.err
+#SBATCH -o logs_postdis/angsd_LRT_%A_%a.out
+#SBATCH -e logs_postdis/angsd_LRT_%A_%a.err
 #SBATCH --constraint=holyib
 #SBATCH --array=1-19
 
