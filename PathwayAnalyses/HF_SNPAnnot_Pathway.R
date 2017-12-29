@@ -60,11 +60,11 @@ hf_scores_hs <- hf_scores %>%
 
 HSS <- searchSubnet(kegg_human,
                     hf_scores_hs,
-                    iterations = 5000)
+                    iterations = 10000)
 
 null <- nullDist(kegg_human,
                  hf_scores_hs,
-                 n = 5000)
+                 n = 10000)
 
 HSS_test <- testSubnet(HSS,null)
 tab <- summary(HSS_test)
