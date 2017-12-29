@@ -21,9 +21,9 @@ hf_scores <- hf_scores %>%
   dplyr::select(entrezgene_zf,chisq)
 
 #Load gallus gallus, zebra finch and human gene tables for entrezgene translation.
-zf_gene <- read_delim("ZF_GeneID_Table.txt",delim="\t")
+zf_gene <- read_delim("/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PathwayAnalyses/ZF_GeneID_Table.txt",delim="\t")
 #gg_gene <- read_delim("GG_GeneID_Table.txt",delim="\t")
-hs_gene <- read_delim("HS_GeneID_Table.txt",delim="\t")
+hs_gene <- read_delim("/n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/PathwayAnalyses/HS_GeneID_Table.txt",delim="\t")
 
 # gg_gene <- gg_gene %>%
 #   dplyr::select(GeneID,Symbol) %>%
