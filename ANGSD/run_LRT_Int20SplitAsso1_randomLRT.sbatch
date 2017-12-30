@@ -23,4 +23,4 @@ RANDOM=$4
 
 #Use Samtools model for GL calculation, infer major/minor based on HF reference, calculate Likelhood Ratio Tests comparing samples from different time points.
 
-angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref ${REF} -out results_LRT_randomized/${SAMPLES}_rand${RANDOM}_20_${SLURM_ARRAY_TASK_ID} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -only_proper_pairs 1 -minQ 20 -sites ${SITES} -doMaf 3 -doMajorMinor 1 -GL 2 -nThreads 6 -ybin ${BAMLISTDIR}/${SAMPLES}_yBin_rand${RANDOM}.txt -doAsso 1 -SNP_pval 1e-6 -minMaf 0.10 -rf split_fai_int20_angsd/final.assembly.homo.fa_20_${SLURM_ARRAY_TASK_ID} 
+angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref ${REF} -out results_LRT_randomized/${SAMPLES}_rand${RANDOMNUM}_20_${SLURM_ARRAY_TASK_ID} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -only_proper_pairs 1 -minQ 20 -sites ${SITES} -doMaf 3 -doMajorMinor 1 -GL 2 -nThreads 6 -ybin ${BAMLISTDIR}/${SAMPLES}_yBin_rand${RANDOMNUM}.txt -doAsso 1 -SNP_pval 1e-6 -minMaf 0.10 -rf split_fai_int20_angsd/final.assembly.homo.fa_20_${SLURM_ARRAY_TASK_ID} 
