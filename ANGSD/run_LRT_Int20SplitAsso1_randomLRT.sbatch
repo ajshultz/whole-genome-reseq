@@ -18,7 +18,7 @@ REF=../genome/final.assembly.homo.fa
 SAMPLES=$1
 BAMLISTDIR=$2
 SITES=$3
-RANDOM=$4
+RANDOMNUM=$4
 
 
 #Use Samtools model for GL calculation, infer major/minor based on HF reference, calculate Likelhood Ratio Tests comparing samples from different time points.
