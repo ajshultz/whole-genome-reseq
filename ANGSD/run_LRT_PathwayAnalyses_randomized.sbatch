@@ -6,12 +6,12 @@
 #SBATCH --mem 16000
 #SBATCH -t 1-00:00:00
 #SBATCH -J angsd_LRT_rand
-#SBATCH -o logs_postdis/angsd_LRT_rand_%A_%a.out
-#SBATCH -e logs_postdis/angsd_LRT_rand_%A_%a.err
+#SBATCH -o logs_postdis/angsd_LRT_rand_%j.out
+#SBATCH -e logs_postdis/angsd_LRT_rand_%j.err
 #SBATCH --constraint=holyib
 
 
-RANDOMNUM = $1
+RANDOMNUM=$1
 
 
 sh ../whole-genome-reseq/ANGSD/concat_LRT_Div20.sh Eastern_9001_rand${RANDOMNUM}
