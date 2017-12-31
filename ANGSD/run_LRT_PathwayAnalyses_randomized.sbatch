@@ -13,10 +13,12 @@
 
 RANDOMNUM=$1
 
-
+cd results_LRT_randomized
 sh ../whole-genome-reseq/ANGSD/concat_LRT_Div20.sh Eastern_9001_rand${RANDOMNUM}
 sh ../whole-genome-reseq/ANGSD/concat_LRT.sh Eastern_9001_rand${RANDOMNUM}
-gunzip results_LRT_randomized/Eastern_9001_rand${RANDOMNUM}_cat.lrt0.gz
+gunzip Eastern_9001_rand${RANDOMNUM}_cat.lrt0.gz
+
+cd ../
 
 awk '{print $1"\t"$2-1"\t"$2"\t"$6}' results_LRT_randomized/Eastern_9001_rand${RANDOMNUM}_cat.lrt0 > results_pathway_randomized/Eastern_9001_rand${RANDOMNUM}_cat.lrt0.bed
 
