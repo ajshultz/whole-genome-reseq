@@ -14,8 +14,8 @@
 RANDOMNUM=$1
 
 cd results_LRT_randomized
-sh ../whole-genome-reseq/ANGSD/concat_LRT_Div20.sh Eastern_9001_rand${RANDOMNUM}
-sh ../whole-genome-reseq/ANGSD/concat_LRT.sh Eastern_9001_rand${RANDOMNUM}
+sh ../../whole-genome-reseq/ANGSD/concat_LRT_Div20.sh Eastern_9001_rand${RANDOMNUM}
+sh ../../whole-genome-reseq/ANGSD/concat_LRT.sh Eastern_9001_rand${RANDOMNUM}
 gunzip Eastern_9001_rand${RANDOMNUM}_cat.lrt0.gz
 
 cd ../
