@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #SBATCH -p shared
-#SBATCH -n 6
+#SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --mem 16000
+#SBATCH --mem 4000
 #SBATCH -t 1-00:00:00
 #SBATCH -J angsd_LRT_rand
 #SBATCH -o logs_postdis/angsd_LRT_rand_%j.out

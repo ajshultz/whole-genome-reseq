@@ -9,6 +9,7 @@ data(daub13)
 args <- commandArgs(TRUE)
 input <- args[1]
 name <- args[2]
+savedir <- args[3]
 
 hf_scores <- read_delim(input,delim = "\t",col_names = c("scaff","anno","feature","start","end","blank","strand","blank2","id","chisq"))
 
@@ -67,8 +68,10 @@ null <- nullDist(kegg_human,
                  n = 10000)
 
 HSS_test <- testSubnet(HSS,null)
-tab <- summary(HSS_test)
+tab <- summary(HSS_test) %>%
+  mutate(FDR_pval = p.adjust(p.value,method="BH")) %>%
+  arrange(FDR_pval)
 
-save(hf_scores_hs,HSS,null,HSS_test,tab,file=paste("signet_testing_",name,".Rdat",sep=""))
-write.table(tab,file=paste("signet_testing_scores_",name,".tsv",sep=""),sep="\t",quote=FALSE,row.names=FALSE)
+save(hf_scores_hs,HSS,null,HSS_test,tab,file=paste(savedir,"/signet_testing_",name,".Rdat",sep=""))
+write.table(tab,file=paste(savedir,"/signet_testing_scores_",name,".tsv",sep=""),sep="\t",quote=FALSE,row.names=FALSE)
 
