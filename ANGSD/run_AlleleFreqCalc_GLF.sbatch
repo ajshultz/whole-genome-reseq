@@ -3,8 +3,8 @@
 #SBATCH -p shared
 #SBATCH -n 12
 #SBATCH -N 1
-#SBATCH --mem 48000
-#SBATCH -t 2-0:00:00
+#SBATCH --mem 96000
+#SBATCH -t 4-0:00:00
 #SBATCH -J angsd_af_GLF
 #SBATCH -o logs_postdis/angsd_af_glf_%j.out
 #SBATCH -e logs_postdis/angsd_af_glf_%j.err
