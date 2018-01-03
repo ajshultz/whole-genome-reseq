@@ -1,17 +1,17 @@
 #!/bin/bash
 
-#SBATCH -p general
+#SBATCH -p shared
 #SBATCH -n 12
 #SBATCH -N 1
 #SBATCH --mem 30000
 #SBATCH -t 0-8:00:00
 #SBATCH -J angsd_theta
-#SBATCH -o logs/angsd_theta_%A_%a.out
-#SBATCH -e logs/angsd_theta_%A_%a.err
+#SBATCH -o logs_postdis/angsd_theta_%A_%a.out
+#SBATCH -e logs_postdis/angsd_theta_%A_%a.err
 #SBATCH --constraint=holyib
 #SBATCH --array=1-20
 
-module load angsd/0.911-fasrc01
+module load gcc/4.8.2-fasrc01 ngsTools/20170201-fasrc01
 
 REF=../genome/final.assembly.homo.fa
 
@@ -24,12 +24,12 @@ ANC=$4
 
 #Calculate theta for each site
 
-angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref $REF -anc ${ANC} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -sites ${SITES} -only_proper_pairs 0 -nThreads 12 -out results_theta_cov1.7/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID} -doCounts 1 -doMaf 1 -doMajorMinor 1 -GL 1 -doThetas 1 -doSaf 1 -pest results_saf/${SAMPLES}_Genome.sfs -rf split_fai_20_angsd/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list
+angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref $REF -anc ${ANC} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -sites ${SITES} -only_proper_pairs 1 -nThreads 12 -out results_theta/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID} -doCounts 1 -doMaf 1 -doMajorMinor 1 -GL 2 -doThetas 1 -doSaf 1 -pest results_saf/${SAMPLES}_Genome.sfs -rf split_fai_20_angsd/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list
 
-N_CHR=$(zcat results_theta_cov1.7/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}.thetas.gz | tail -n+2 | cut -s -f 1 | uniq | wc -l)
+N_CHR=$(zcat results_theta/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}.thetas.gz | tail -n+2 | cut -s -f 1 | uniq | wc -l)
 echo $N_CHR
 
 #3) Estimate Tajima's D and other statistics for each site
-thetaStat make_bed results_theta_cov1.7/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}.thetas.gz
-thetaStat do_stat results_theta_cov1.7/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}.thetas.gz -win 1000 -step 1000 -nChr ${N_CHR} -outnames results_theta_cov1.7/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}_1kbWin_1kbStep
-thetaStat do_stat results_theta_cov1.7/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}.thetas.gz -win 2500 -step 500 -nChr ${N_CHR} -outnames results_theta_cov1.7/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}_2.5kbWin_.5kbStep
+thetaStat make_bed results_theta/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}.thetas.gz
+thetaStat do_stat results_theta/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}.thetas.gz -win 1000 -step 1000 -nChr ${N_CHR} -outnames results_theta/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}_1kbWin_1kbStep
+thetaStat do_stat results/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}.thetas.gz -win 2500 -step 500 -nChr ${N_CHR} -outnames results_theta/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}_2.5kbWin_.5kbStep
