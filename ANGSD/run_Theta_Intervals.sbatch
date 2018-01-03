@@ -24,7 +24,7 @@ ANC=$4
 
 #Calculate theta for each site
 
-angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref $REF -anc ${ANC} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -sites ${SITES} -only_proper_pairs 1 -nThreads 12 -out results_theta/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID} -doCounts 1 -doMaf 1 -doMajorMinor 1 -GL 2 -doThetas 1 -doSaf 1 -pest results_saf/${SAMPLES}_Genome.sfs -rf split_fai_20_angsd/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list
+angsd -bam ${BAMLISTDIR}/${SAMPLES}_BamList.txt -ref $REF -anc ${ANC} -uniqueOnly 1 -remove_bads 1 -trim 0 -minMapQ 20 -minQ 20 -sites ${SITES} -only_proper_pairs 1 -nThreads 12 -out results_theta/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID} -doCounts 1 -doMaf 1 -doMajorMinor 1 -GL 2 -doThetas 1 -doSaf 1 -pest results_saf_merged/${SAMPLES}_Augosomal.sfs -rf split_fai_20_angsd/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list
 
 N_CHR=$(zcat results_theta/${SAMPLES}_Int${SLURM_ARRAY_TASK_ID}.thetas.gz | tail -n+2 | cut -s -f 1 | uniq | wc -l)
 echo $N_CHR
