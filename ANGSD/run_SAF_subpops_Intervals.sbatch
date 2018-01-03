@@ -9,7 +9,7 @@
 #SBATCH -o logs_postdis/angsd_saf_%A_%a.out
 #SBATCH -e logs_postdis/angsd_saf_%A_%a.err
 #SBATCH --constraint=holyib
-#SBATCH --array=20
+#SBATCH --array=1-20
 
 #Use ANGSD 9.12
 module load gcc/4.8.2-fasrc01 ngsTools/20170201-fasrc01
