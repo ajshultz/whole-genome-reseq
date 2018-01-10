@@ -21,10 +21,10 @@ SFS=$3
 
 #prepare the fst for easy window analysis etc
 
-realSFS fst index results_saf/{POP1}_Int${SLURM_ARRAY_TASK_ID}.saf.idx results_saf/${POP2}_Int${SLURM_ARRAY_TASK_ID}.saf.idx -sfs ${SFS} -P 8 -fstout results_fst/${POP1}.${POP2}_Int${SLURM_ARRAY_TASK_ID}
+realSFS fst index results_saf/${POP1}_Int${SLURM_ARRAY_TASK_ID}.saf.idx results_saf/${POP2}_Int${SLURM_ARRAY_TASK_ID}.saf.idx -sfs ${SFS} -P 8 -fstout results_fst/${POP1}.${POP2}_Int${SLURM_ARRAY_TASK_ID}
 
 #get the global estimate
-realSFS fst stats results_fst/${POP1}.${POP2}_Int${SLURM_ARRAY_TASK_ID}.fst.idx > results_fst/results_fst/${POP1}.${POP2}_Int${SLURM_ARRAY_TASK_ID}.global_fst
+realSFS fst stats results_fst/${POP1}.${POP2}_Int${SLURM_ARRAY_TASK_ID}.fst.idx > results_fst/${POP1}.${POP2}_Int${SLURM_ARRAY_TASK_ID}.global_fst
 
 #sliding window
 realSFS fst stats2 results_fst/${POP1}.${POP2}_Int${SLURM_ARRAY_TASK_ID}.fst.idx -win 1000 -step 1000 > results_fst/${POP1}.${POP2}_Int${SLURM_ARRAY_TASK_ID}.fst_1kbWin_1kbStep
