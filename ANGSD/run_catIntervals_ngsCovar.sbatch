@@ -11,7 +11,7 @@
 #SBATCH --constraint=holyib
 
 #Have to reload ngsTools
-module load ngsTools/0.615-fasrc01
+module load gcc/4.8.2-fasrc01 ngsTools/20170201-fasrc01
 
 SAMPLES=$1
 NIND=$2
