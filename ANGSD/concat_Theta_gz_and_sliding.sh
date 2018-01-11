@@ -26,17 +26,19 @@ if [ "$COUNT" -eq "20" ]
 
 then	
 	
-	#zcat ${DIRECTORY}/${SAMPLE}_Int1.thetas.gz > ${DIRECTORY}/${SAMPLE}_cat.thetas
+	zcat ${DIRECTORY}/${SAMPLE}_Int1.thetas.gz > ${DIRECTORY}/${SAMPLE}_cat.thetas
 	cp ${DIRECTORY}/${SAMPLE}_Int1_1kbWin_1kbStep.pestPG ${DIRECTORY}/${SAMPLE}_cat_1.20_1kbWin_1kbStep.pestPG
-		#cp ${DIRECTORY}/${SAMPLE}_Int1_2.5kbWin_.5kbStep.pestPG ${DIRECTORY}/${SAMPLE}_cat_1.20_2.5kbWin_.5kbStep.pestPG
+	cp ${DIRECTORY}/${SAMPLE}_Int1_2.5kbWin_.5kbStep.pestPG ${DIRECTORY}/${SAMPLE}_cat_1.20_2.5kbWin_.5kbStep.pestPG
 	
 	for i in {1..20}
 		do	
 		cat ${DIRECTORY}/${SAMPLE}_Int${i}_1kbWin_1kbStep.pestPG | tail -n +2 >> ${DIRECTORY}/${SAMPLE}_cat_1.20_1kbWin_1kbStep.pestPG
-		#cat ${DIRECTORY}/${SAMPLE}_Int${i}_2.5kbWin_.5kbStep.pestPG | tail -n +2 >> ${DIRECTORY}/${SAMPLE}_cat_1.20_2.5kbWin_.5kbStep.pestPG		
-		#zcat ${DIRECTORY}/${SAMPLE}_Int${i}.thetas.gz | tail -n +2 >> ${DIRECTORY}/${SAMPLE}_cat.thetas.gz
+		cat ${DIRECTORY}/${SAMPLE}_Int${i}_2.5kbWin_.5kbStep.pestPG | tail -n +2 >> ${DIRECTORY}/${SAMPLE}_cat_1.20_2.5kbWin_.5kbStep.pestPG		
+		zcat ${DIRECTORY}/${SAMPLE}_Int${i}.thetas.gz | tail -n +2 >> ${DIRECTORY}/${SAMPLE}_cat.thetas
 		done
 
+	gzip ${DIRECTORY}/${SAMPLE}_cat.thetas
+	
 else
 	echo Something is wrong
 fi
