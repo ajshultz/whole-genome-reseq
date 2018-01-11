@@ -18,7 +18,7 @@ NIND=$2
 NINTERVAL=$3
 DIRECTORY=$4
 
-sh /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/ANGSD/concat_PCA.sh ${SAMPLES} ${NINTERVAL} ${DIRECTORY}
+#sh /n/holylfs/LABS/edwards_lab/ashultz/HFWGReseq/whole-genome-reseq/ANGSD/concat_PCA.sh ${SAMPLES} ${NINTERVAL} ${DIRECTORY}
 
 N_SITES=$(zcat results_pca/${SAMPLES}_cat.mafs.gz | tail -n+2 | wc -l)
 echo $N_SITES
