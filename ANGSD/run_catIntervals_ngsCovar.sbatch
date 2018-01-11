@@ -3,7 +3,7 @@
 #SBATCH -p shared
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --mem 8000
+#SBATCH --mem 16000
 #SBATCH -t 1-0:00:00
 #SBATCH -J angsd_pca
 #SBATCH -o logs_postdis/angsd_pca_%j.out
