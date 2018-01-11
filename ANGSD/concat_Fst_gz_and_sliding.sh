@@ -10,7 +10,7 @@ for i in {1..20}
 
 do
 
-if [ -f ${DIRECTORY}/${SAMPLE}_Int$i.thetas.gz ]
+if [ -f ${DIRECTORY}/${SAMPLE}_Int$i.fst.gz ]
 then
 COUNT=$(($COUNT+1))
 
