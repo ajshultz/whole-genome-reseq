@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAMES=( "Eastern_90" "Eastern_01" "Eastern_14" "Western_01" "Western_14" "CC" "CP" )
+NAMES=( "Eastern_90.Eastern01" "Eastern_90.Eastern_14" "Eastern_01.Eastern_14" "Western_01.Western_14" "Eastern_90.Western_01" "Eastern_14.Western_14" )
 NINT=20
 
 
