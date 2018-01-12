@@ -3,8 +3,8 @@
 #SBATCH -p shared
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --mem 6000
-#SBATCH -t 1-0:00:00
+#SBATCH --mem 8000
+#SBATCH -t 5-0:00:00
 #SBATCH -J ld_calc
 #SBATCH -o logs/mapgd_ld_%A_%a.out
 #SBATCH -e logs/mapgd_ld_%A_%a.err
