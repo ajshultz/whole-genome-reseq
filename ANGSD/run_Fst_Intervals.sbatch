@@ -19,6 +19,9 @@ POP1=$1
 POP2=$2
 SFS=$3
 
+#Calculate joint SFS spectrum
+realSFS results_saf_merged/${POP1}_merged.saf.idx results_saf_merged/${POP2}_merged.saf.idx -P 12 > ${POP1}_${POP2}_Autosomal.sfs
+
 #prepare the fst for easy window analysis etc
 
 realSFS fst index results_saf/${POP1}_Int${SLURM_ARRAY_TASK_ID}.saf.idx results_saf/${POP2}_Int${SLURM_ARRAY_TASK_ID}.saf.idx -sfs ${SFS} -P 8 -fstout results_fst/${POP1}.${POP2}_Int${SLURM_ARRAY_TASK_ID}
