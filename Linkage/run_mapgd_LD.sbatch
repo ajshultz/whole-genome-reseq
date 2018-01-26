@@ -18,6 +18,8 @@ SAMPLES=$1
 BAMLISTDIR=$2
 SITES=$3
 
+SPACE="\s"
+
 SCAFFOLD_FILE=../gatk/split_fai_20/final.assembly.homo.fa_${SLURM_ARRAY_TASK_ID}.interval_list
 
 
@@ -32,7 +34,7 @@ do
 		samtools mpileup -q 20 -Q 20 -r ${SCAFFOLD} -l ${SITES} -f ../genome/final.assembly.homo.fa -b ${BAMLISTDIR}/${SAMPLES}_BamList.txt > mpileup/${SAMPLES}_${SCAFFOLD}.mpileup
 
 		grep '^@HD' _generic.header > mapgd_format/${SAMPLES}_${SCAFFOLD}.header
-		grep ${SCAFFOLD} _generic.header >> mapgd_format/${SAMPLES}_${SCAFFOLD}.header
+		grep ${SCAFFOLD}${SPACE} _generic.header >> mapgd_format/${SAMPLES}_${SCAFFOLD}.header
 
 
 		mapgd proview -i mpileup/${SAMPLES}_${SCAFFOLD}.mpileup -H mapgd_format/${SAMPLES}_${SCAFFOLD}.header > mapgd_format/${SAMPLES}_${SCAFFOLD}.pro
