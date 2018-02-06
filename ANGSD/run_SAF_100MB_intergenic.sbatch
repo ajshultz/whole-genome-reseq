@@ -3,7 +3,7 @@
 #SBATCH -p shared
 #SBATCH -n 8
 #SBATCH -N 1
-#SBATCH --mem 16000
+#SBATCH --mem 24000
 #SBATCH -t 1-0:00:00
 #SBATCH -J angsd_saf
 #SBATCH -o logs_postdis/angsd_saf_%j.out
