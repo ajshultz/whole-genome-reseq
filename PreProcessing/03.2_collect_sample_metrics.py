@@ -51,7 +51,7 @@ def main(argv):
 					splitline = line.split("\t")
 					try:
 					#Look for lines with the paired data at the sample level (no read group but sample in sample list, add to dict)
-						if splitline[-3] in samples and splitline [-2] == "" and splitline[0] == "PAIR":
+						if splitline[-3] in samples and splitline[-2] == "" and splitline[0] == "PAIR":
 							alignMetDict[splitline[-3]] = line
 					except (IndexError):
 						pass
