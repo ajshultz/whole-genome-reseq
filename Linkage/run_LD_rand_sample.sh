@@ -3,7 +3,7 @@
 #SBATCH -p shared
 #SBATCH -n 11
 #SBATCH -N 1
-#SBATCH --mem 4000
+#SBATCH --mem 12000
 #SBATCH -t 5-0:00:00
 #SBATCH -J ld_sample
 #SBATCH -o logs/mapgd_ld_samp_%j.out
