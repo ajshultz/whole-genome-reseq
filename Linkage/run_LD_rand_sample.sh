@@ -50,3 +50,4 @@ gzip ${INPUT_DIR}/${POP}_scaffold_${SCAFF_NUM}_10kbMax.linkage
 echo scaffold_${SCAFF_NUM} for ${POP} finished
 
 done
+
