@@ -18,7 +18,7 @@ echo SCAFF_X$'\t'POS_X$'\t'SCAFF_Y$'\t'POS_Y$'\t'DIST$'\t'BEST_D$'\t'BEST_Dprime
 
 done
 
-for SCAFF_NUM in {1..7026}
+for SCAFF_NUM in {0..7026}
 
 do
 #Grab number of sites in scaffold file, subtract header lines
@@ -31,9 +31,11 @@ SUB_SITES=${SUB_SITES%%.*}
 
 #Grab contents of scaffold, remove first 6 rows, shuffle, and append subset of lines to output file - repeat shuffle and output 10 times
 
-cat ${POP}_scaffold_${SCAFF_NUM}_maf0.1_10kbMax.linkage | tail -n +7 | tee >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_1.linkage.txt ) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_2.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_3.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_4.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_5.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_6.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_7.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_8.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_9.linkage.txt) | shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_10.linkage.txt
+cat ${POP}_scaffold_${SCAFF_NUM}_10kbMax.linkage | tail -n +7 | tee >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_1.linkage.txt ) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_2.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_3.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_4.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_5.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_6.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_7.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_8.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_9.linkage.txt) | shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_10.linkage.txt
 
 #gzip input file
-gzip ${POP}_scaffold_${SCAFF_NUM}_maf0.1_10kbMax.linkage
+gzip ${POP}_scaffold_${SCAFF_NUM}_10kbMax.linkage
+
+echo scaffold_${SCAFF_NUM} for ${POP} finished
 
 done
