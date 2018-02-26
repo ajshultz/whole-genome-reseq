@@ -1,12 +1,23 @@
 #!/bin/bash
 
+#SBATCH -p shared
+#SBATCH -n 11
+#SBATCH -N 1
+#SBATCH --mem 4000
+#SBATCH -t 5-0:00:00
+#SBATCH -J ld_sample
+#SBATCH -o logs/mapgd_ld_samp_%j.out
+#SBATCH -e logs/mapgd_ld_samp_%j.err
+#SBATCH --constraint=holyib
+
+
 #The purpose of this script is to take one file per scaffold of linkage results from mapgd, and randomly sample a specified proportion of lines. Users must supply arguments... Will produce 10 files with different random samples drawn from files.
 
 
 POP=$1
 PROPORTION=$2
 OUT_DIR=$3
-
+INPUT_DIR=$4
 
 #Create output file, and write header for 1-10 random files
 for i in {1..10}
