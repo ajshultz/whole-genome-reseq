@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH -p shared
-#SBATCH -n 11
+#SBATCH -n 5
 #SBATCH -N 1
 #SBATCH --mem 60000
 #SBATCH -t 5-0:00:00
@@ -11,7 +11,7 @@
 #SBATCH --constraint=holyib
 
 
-#The purpose of this script is to take one file per scaffold of linkage results from mapgd, and randomly sample a specified proportion of lines. Users must supply arguments... Will produce 10 files with different random samples drawn from files.
+#The purpose of this script is to take one file per scaffold of linkage results from mapgd, and randomly sample a specified proportion of lines. Users must supply arguments... Will produce 5 files with different random samples drawn from files.
 
 
 POP=$1
@@ -20,7 +20,7 @@ OUT_DIR=$3
 INPUT_DIR=$4
 
 #Create output file, and write header for 1-10 random files
-for i in {1..10}
+for i in {1..5}
 
 do
 
@@ -42,7 +42,7 @@ SUB_SITES=${SUB_SITES%%.*}
 
 #Grab contents of scaffold, remove first 6 rows, shuffle, and append subset of lines to output file - repeat shuffle and output 10 times
 
-cat ${INPUT_DIR}/${POP}_scaffold_${SCAFF_NUM}_10kbMax.linkage | tail -n +7 | tee >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_1.linkage.txt ) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_2.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_3.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_4.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_5.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_6.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_7.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_8.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_9.linkage.txt) | shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_10.linkage.txt
+cat ${INPUT_DIR}/${POP}_scaffold_${SCAFF_NUM}_10kbMax.linkage | tail -n +7 | tee >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_1.linkage.txt ) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_2.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_3.linkage.txt) >(shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_4.linkage.txt) | shuf | head -n $SUB_SITES >> ${OUT_DIR}/${POP}_sample_${PROPORTION}_5.linkage.txt
 
 #gzip input file
 gzip ${INPUT_DIR}/${POP}_scaffold_${SCAFF_NUM}_10kbMax.linkage
