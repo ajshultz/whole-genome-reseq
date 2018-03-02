@@ -30,7 +30,7 @@ then
 	cp ${DIRECTORY}/${SAMPLE}_Int1.fst_1kbWin_1kbStep ${DIRECTORY}/${SAMPLE}_cat_1.20.fst_1kbWin_1kbStep
 		cp ${DIRECTORY}/${SAMPLE}_Int1.fst_2.5kbWin_.5kbStep ${DIRECTORY}/${SAMPLE}_cat.fst_1.20_2.5kbWin_.5kbStep
 	
-	for i in {1..20}
+	for i in {2..20}
 		do	
 		cat ${DIRECTORY}/${SAMPLE}_Int${i}.fst_1kbWin_1kbStep | tail -n +2 >> ${DIRECTORY}/${SAMPLE}_cat_1.20.fst_1kbWin_1kbStep
 		cat ${DIRECTORY}/${SAMPLE}_Int${i}.fst_2.5kbWin_.5kbStep | tail -n +2 >> ${DIRECTORY}/${SAMPLE}_cat_1.20.fst_2.5kbWin_.5kbStep		
