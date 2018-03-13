@@ -4,7 +4,7 @@
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem 8000
-#SBATCH -t 3-0:00:00
+#SBATCH -t 1-0:00:00
 #SBATCH -J ld_calc
 #SBATCH -o logs/mapgd_ld_%A_%a.out
 #SBATCH -e logs/mapgd_ld_%A_%a.err
@@ -22,6 +22,7 @@ SPACE="\s"
 
 SCAFFOLD_FILE=../genome/bedfiles/genome_subset_5MB_50kbSegments_autosomal_${SLURM_ARRAY_TASK_ID}.angsdsites
 
+module load gcc/4.8.2-fasrc01
 
 #for loop over scaffolds in file.
 
