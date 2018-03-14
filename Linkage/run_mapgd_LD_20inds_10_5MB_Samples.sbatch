@@ -29,30 +29,30 @@ module load gcc/4.8.2-fasrc01
 awk '{print $1}' ${SCAFFOLD_FILE} | uniq | while read SCAFFOLD;
 do
 
-	if [ ! -f linkage_20inds_10_5MBSamples/${SAMPLES}_${SCAFFOLD}_10kbMax.linkage ]
+	if [ ! -f linkage_20inds_10_5MBSamples/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}_10kbMax.linkage ]
 	then
 		#Run from MAPGD directory
-		samtools mpileup -q 20 -Q 20 -r ${SCAFFOLD} -l ${SCAFFOLD_FILE} -f ../genome/final.assembly.homo.fa -b ${BAMLISTDIR}/${SAMPLES}_20inds_${SAMPLE_REP}_BamList.txt > mpileup/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.mpileup
+		samtools mpileup -q 20 -Q 20 -r ${SCAFFOLD} -l ${SCAFFOLD_FILE} -f ../genome/final.assembly.homo.fa -b ${BAMLISTDIR}/${SAMPLES}_20inds_${SAMPLE_REP}_BamList.txt > mpileup/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.mpileup
 
-		grep '^@HD' _generic.header > mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.header
-		grep ${SCAFFOLD}${SPACE} _generic.header >> mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.header
+		grep '^@HD' _generic.header > mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.header
+		grep ${SCAFFOLD}${SPACE} _generic.header >> mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.header
 
 
-		mapgd proview -i mpileup/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.mpileup -H mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.header > mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.pro
+		mapgd proview -i mpileup/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.mpileup -H mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.header > mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.pro
 
-		mapgd allele -i mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.pro -c 1 | mapgd filter -p 10 -c 1 -q 0.1 -Q 0.9 > mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.map
+		mapgd allele -i mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.pro -c 1 | mapgd filter -p 10 -c 1 -q 0.1 -Q 0.9 > mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.map
 
-		mapgd genotype -p mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.pro -m mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.map > mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.genotype
+		mapgd genotype -p mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.pro -m mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.map > mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.genotype
 
-		mapgd linkage -i mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.genotype -D 10000 -M 4 > linkage_20inds_10_5MBSamples/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}_10kbMax.linkage
+		mapgd linkage -i mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.genotype -D 10000 -M 4 > linkage_20inds_10_5MBSamples/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}_10kbMax.linkage
 	
 		#Remove intermediate files
-		rm mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.header
-		rm mpileup/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.mpileup
-		rm mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.pro
-		rm mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.map
-		rm mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}.genotype
-		gzip linkage_20inds_10_5MBSamples/${SAMPLES}_${SAMPLE_REP}_${SCAFFOLD}_10kbMax.linkage
+		rm mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.header
+		rm mpileup/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.mpileup
+		rm mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.pro
+		rm mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.map
+		rm mapgd_format/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}.genotype
+		gzip linkage_20inds_10_5MBSamples/${SAMPLES}_${SAMPLE_REP}_${SLURM_ARRAY_TASK_ID}_${SCAFFOLD}_10kbMax.linkage
 	fi
 
 done
