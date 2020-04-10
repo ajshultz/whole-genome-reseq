@@ -15,7 +15,7 @@ hf_scores <- read_delim(input,delim = "\t",col_names = c("scaff","gene_id","star
 
 #Transform into tibble with just zebra finch entrezgene ID and chisq score.
 hf_scores <- hf_scores %>%
-  dplyr::select(gene_id,chisq) 
+  dplyr::select(entrezgene_zf=gene_id,chisq) 
 
 #Load gallus gallus, zebra finch and human gene tables for entrezgene translation.
 zf_gene <- read_delim("../ZF_GeneID_Table.txt",delim="\t")
